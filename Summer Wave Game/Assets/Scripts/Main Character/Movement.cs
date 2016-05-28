@@ -6,32 +6,38 @@ public class Movement : MonoBehaviour {
 	[SerializeField] private float moveSpeed;
 	[SerializeField] private float rotation;
 
+	private float xRot;
+	private float yRot;
+
 	private Rigidbody rb;
 
 	// Use this for initialization
 	void Start () {
 		moveSpeed = 10f;
 		rotation = 10f;
+
+		xRot = 0f;
+		yRot = 0f;
+
 		rb = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKey(KeyCode.A)){
-			rb.AddForce(new Vector3(-1f * moveSpeed, 0f, 0f));
-		}
 
-		if(Input.GetKey(KeyCode.D)){
-			rb.AddForce(new Vector3(1f * moveSpeed, 0f, 0f));
-		}
+		float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed;
+		float verticleMovement = Input.GetAxis("Vertical") * moveSpeed;
 
-		if(Input.GetKey(KeyCode.W)){
-			rb.AddForce(new Vector3(0f, 0f, 1f * moveSpeed));
-		}
+		xRot -= Input.GetAxis("Mouse Y");
+		yRot += Input.GetAxis("Mouse X");
 
-		if(Input.GetKey(KeyCode.S)){
-			rb.AddForce(new Vector3(0f, 0f, -1f * moveSpeed));
-		}
+		Vector3 movement = new Vector3(horizontalMovement, transform.position.y, verticleMovement);
+		Vector3 rot = new Vector3(xRot, yRot, 0f);
 
+		rb.AddForce(movement);
+
+		if(!Input.GetKey(KeyCode.Mouse2)){
+			transform.eulerAngles = rot;
+		}
 	}
 }
