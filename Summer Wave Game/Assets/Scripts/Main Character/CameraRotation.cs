@@ -6,9 +6,11 @@ public class CameraRotation : MonoBehaviour {
 	[SerializeField] private float rotation;
 	[SerializeField] private float xRot;
 	[SerializeField] private float yRot;
+	[SerializeField] private float camX;
+	[SerializeField] private float camY;
+	[SerializeField] private float camZ;
 
-	private float camX;
-	private float camY;
+	[SerializeField] Vector3 resetCam;
 
 	// Use this for initialization
 	void Start () {
@@ -16,8 +18,10 @@ public class CameraRotation : MonoBehaviour {
 		xRot = 0f;
 		yRot = 0f;
 
-		camX = transform.rotation.x;
-		camY = transform.rotation.y;
+		camX = 22f;
+		camY = 0f;
+		camZ = 0f;
+		resetCam = new Vector3(camX, camY, camZ);
 	}
 	
 	// Update is called once per frame
@@ -30,13 +34,12 @@ public class CameraRotation : MonoBehaviour {
 
 		Vector3 mousePos = new Vector3(xRot, yRot, 0f);
 
-		if(Input.GetKeyDown(KeyCode.Mouse2)){
-			camX = transform.rotation.x;
-			camY = transform.rotation.y;
-		}
-
 		if(Input.GetKey(KeyCode.Mouse2)){
 			transform.eulerAngles = mousePos;
+		}
+
+		if(Input.GetKeyUp(KeyCode.Mouse2)){
+			Camera.main.transform.localRotation = Quaternion.Euler(new Vector3(camX, camY, camZ));
 		}
 	}
 }
