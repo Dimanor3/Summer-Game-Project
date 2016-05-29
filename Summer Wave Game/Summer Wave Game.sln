@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{3BB1260B-1CEC-CAB2-D006-FDAAAD382E11}") = "Summer Wave Game", "Assembly-CSharp.csproj", "{D45869AE-2B37-2C44-C0AA-AD8F9F8A3F7A}"
+EndProject
+Project("{3BB1260B-1CEC-CAB2-D006-FDAAAD382E11}") = "Summer Wave Game", "Assembly-CSharp-Editor.csproj", "{C5D0EDCA-E774-EB54-31AE-8F5B9997778D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D45869AE-2B37-2C44-C0AA-AD8F9F8A3F7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45869AE-2B37-2C44-C0AA-AD8F9F8A3F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45869AE-2B37-2C44-C0AA-AD8F9F8A3F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45869AE-2B37-2C44-C0AA-AD8F9F8A3F7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D0EDCA-E774-EB54-31AE-8F5B9997778D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D0EDCA-E774-EB54-31AE-8F5B9997778D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D0EDCA-E774-EB54-31AE-8F5B9997778D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D0EDCA-E774-EB54-31AE-8F5B9997778D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
