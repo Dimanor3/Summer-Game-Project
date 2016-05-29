@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour {
 
 	private float xRot;
 	private float yRot;
+	private float zRot;
+
+	[SerializeField] private Vector3 origRot;
 
 	private Rigidbody rb;
 
@@ -18,8 +21,11 @@ public class Movement : MonoBehaviour {
 
 		xRot = 0f;
 		yRot = 0f;
+		zRot = 0f;
 
 		rb = GetComponent<Rigidbody>();
+
+		origRot = rb.rotation.eulerAngles;
 	}
 	
 	// Update is called once per frame
@@ -28,13 +34,20 @@ public class Movement : MonoBehaviour {
 		float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed;
 		float verticleMovement = Input.GetAxis("Vertical") * moveSpeed;
 
-		xRot -= Input.GetAxis("Mouse Y");
 		yRot += Input.GetAxis("Mouse X");
 
 		Vector3 movement = new Vector3(horizontalMovement, transform.position.y, verticleMovement);
-		Vector3 rot = new Vector3(xRot, yRot, 0f);
+		Vector3 rot = new Vector3(xRot, yRot, zRot);
 
-		rb.AddForce(movement);
+		rb.AddForce(Vector3.Scale(transform.rotation.eulerAngles, Vector3.Scale(movement, Vector3.forward)));
+
+		if(Input.GetKeyDown(KeyCode.Mouse2)){
+			origRot = rb.rotation.eulerAngles;
+		}
+
+		if(Input.GetKeyUp(KeyCode.Mouse2)){
+			transform.eulerAngles = origRot;
+		}
 
 		if(!Input.GetKey(KeyCode.Mouse2)){
 			transform.eulerAngles = rot;
