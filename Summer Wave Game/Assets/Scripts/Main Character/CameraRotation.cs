@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class CameraRotation : MonoBehaviour {
-
 	//[SerializeField] private float rotation;
 
 	// Freely rotate the camera along the x and y axis
@@ -21,7 +20,6 @@ public class CameraRotation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 		//rotation = 1f;
 
 		// Initialize free rotation across the x and y axis
@@ -41,7 +39,6 @@ public class CameraRotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		// Set camera's free rotation
 		xRot -= Input.GetAxis("Mouse Y");
 		yRot += Input.GetAxis("Mouse X");
@@ -62,5 +59,4 @@ public class CameraRotation : MonoBehaviour {
 			Camera.main.transform.localRotation = Quaternion.Euler(resetCam);
 		}
 	}
-
 }

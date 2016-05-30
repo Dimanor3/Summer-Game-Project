@@ -2,19 +2,17 @@
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotor : MonoBehaviour {
-
 	// Access to the main characters rigid body
 	private Rigidbody rb;
 
 	// Move main character
-	private Vector3 movement;
+	[SerializeField] private Vector3 movement;
 
 	// Rotate main character
 	private Vector3 rotation;
 
 	// Use this for initialization
 	void Start () {
-		
 		// Initialize rigid body
 		rb = GetComponent<Rigidbody>();
 
@@ -23,7 +21,6 @@ public class PlayerMotor : MonoBehaviour {
 
 		// Initializes rotation
 		rotation = Vector3.zero;
-
 	}
 
 	// Run every physics iteration
@@ -53,5 +50,4 @@ public class PlayerMotor : MonoBehaviour {
 	void PerformRotation(){
 		rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation));
 	}
-
 }
