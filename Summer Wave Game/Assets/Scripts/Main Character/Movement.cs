@@ -47,20 +47,23 @@ public class Movement : MonoBehaviour {
 	void Update () {
 
 		// Main characters left, right, up and down movement
-		float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed;
-		float verticleMovement = Input.GetAxis("Vertical") * moveSpeed;
+		float horizontalMovement = Input.GetAxis("Horizontal");
+		float verticalMovement = Input.GetAxis("Vertical");
 
 		// Turn the main characters on the y axis
 		yRot += Input.GetAxis("Mouse X");
 
 		// Setup for main characters movement
-		Vector3 movement = new Vector3(horizontalMovement, transform.position.y, verticleMovement);
+		Vector3 moveHorizontal = transform.right * horizontalMovement;
+		Vector3 moveVertical = transform.forward * verticalMovement;
+		Vector3 movement = (moveHorizontal + moveVertical).normalized * moveSpeed;
 
 		// Setup for main characters rotation
 		Vector3 rot = new Vector3(xRot, yRot, zRot);
 
 		// Move player
-		rb.AddForce(Vector3.Scale(transform.rotation.eulerAngles, Vector3.Scale(movement, Vector3.forward)));
+		//rb.AddForce(Vector3.Scale(transform.forward, movement));
+		rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
 
 		// Save the main characters current rotation
 		if(Input.GetKeyDown(freeRotation)){
