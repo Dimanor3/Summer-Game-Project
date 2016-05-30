@@ -46,7 +46,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Main Character\CameraRotation.cs" />
-     <Compile Include="Assets\Scripts\Main Character\Movement.cs" />
+     <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Main Character\PlayerMotor.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
