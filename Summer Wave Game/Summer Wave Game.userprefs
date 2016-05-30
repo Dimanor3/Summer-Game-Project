@@ -1,16 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.WindowsPlayer" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Main Character\PlayerStamina.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Main Character\CameraOrbit.cs">
     <Files>
-      <File FileName="Assets\Scripts\Main Character\CameraRotation.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Main Character\PlayerController.cs" Line="70" Column="3" />
+      <File FileName="Assets\Scripts\Main Character\CameraOrbit.cs" Line="9" Column="43" />
+      <File FileName="Assets\Scripts\Main Character\PlayerController.cs" Line="22" Column="20" />
       <File FileName="Assets\Scripts\Main Character\PlayerMotor.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\PlayerDamageMath.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\WeaponLevel.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Main Character\PlayerStamina.cs" Line="32" Column="17" />
+      <File FileName="Assets\Scripts\Main Character\PlayerStamina.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\Magic.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\Sword.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Health.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Main Character\CameraRotation.cs" Line="44" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

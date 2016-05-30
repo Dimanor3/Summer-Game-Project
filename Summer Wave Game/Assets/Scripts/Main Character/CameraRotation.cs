@@ -32,9 +32,6 @@ public class CameraRotation : MonoBehaviour {
 
 		// Initialize resetCam
 		resetCam = new Vector3(camX, 0f, 0f);
-
-		// Initialize freeRotation
-		freeRotation = KeyCode.Mouse1;
 	}
 	
 	// Update is called once per frame
@@ -46,17 +43,17 @@ public class CameraRotation : MonoBehaviour {
 		// Restrict free rotation around the y axis
 		xRot = Mathf.Clamp(xRot, -45f, 45f);
 
+		// Free rotation mode?
+		float freeRot = Input.GetAxisRaw("FreeLook");
+
 		// Setup the camera's free rotation
 		Vector3 camRotation = new Vector3(xRot, yRot, 0f);
 
-		// Freely rotate the camera
-		if(Input.GetKey(freeRotation)){
+		// Freely rotate the camera and reset when done
+		if(freeRot > 0){
 			transform.eulerAngles = camRotation;
-		}
-
-		// Reset camera rotation after free rotation is released
-		if(Input.GetKeyUp(freeRotation)){
-			Camera.main.transform.localRotation = Quaternion.Euler(resetCam);
+		}else{
+			transform.eulerAngles = resetCam;
 		}
 	}
 }

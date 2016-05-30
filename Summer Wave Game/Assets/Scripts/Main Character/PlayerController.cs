@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 	// Gives us access to all required outside classes
 	private PlayerMotor motor;
 	private PlayerStamina stamina;
+	[SerializeField] private CameraOrbit cam;
 
 	// Running?
 	private float run;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour {
 		// Initialize access to all outside classes
 		motor = GetComponent<PlayerMotor>();
 		stamina = GetComponent<PlayerStamina>();
+		cam = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
 
 		// Initialize necessary variables
 		moveSpeed = 10f;
@@ -49,11 +51,14 @@ public class PlayerController : MonoBehaviour {
 		float horizontalMovement = Input.GetAxisRaw("Horizontal");
 		float verticalMovement = Input.GetAxisRaw("Vertical");
 
+		// Camera controls
+		float camX = Input.GetAxis("Mouse Y");
+		float camY = Input.GetAxis("Mouse X");
+
+		/*
 		// Turn the main characters on the y axis
 		float yRot = Input.GetAxisRaw("Mouse X");
-
-		// Player using free rotation?
-		float freeRot = Input.GetAxisRaw("FreeLook");
+		*/
 
 		// Calculations for main characters movement
 		Vector3 moveHorizontal = transform.right * horizontalMovement;
@@ -72,16 +77,17 @@ public class PlayerController : MonoBehaviour {
 			movement *= moveSpeed;
 		}
 
+		/*
 		// Calculations for main characters rotation
 		Vector3 rot = new Vector3(0f, yRot, 0f) * rotationSpeed;
+		*/
 
 		// Move player
 		motor.Move(movement);
 
-		// Rotate the main character so long as the player isn't using free
-		// rotation
-		if(!(freeRot > 0)){
-			motor.Rotate(rot);
-		}
+		camX = Mathf.Clamp(camX, -45f, 45f);
+
+		cam.MoveHorizontal(camY);
+		cam.MoveVertical(camX);
 	}
 }

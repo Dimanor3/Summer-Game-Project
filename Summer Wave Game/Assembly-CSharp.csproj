@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Health.cs" />
+     <Compile Include="Assets\Scripts\Main Character\CameraOrbit.cs" />
      <Compile Include="Assets\Scripts\Main Character\CameraRotation.cs" />
      <Compile Include="Assets\Scripts\Main Character\Magic.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
