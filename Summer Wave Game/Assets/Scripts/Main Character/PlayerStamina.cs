@@ -3,26 +3,33 @@ using System.Collections;
 
 public class PlayerStamina : MonoBehaviour {
 	// Player's stamina
-	[SerializeField] private float stamina;
-	private float maxStamina;
+	[SerializeField] private float stamina = 0f;
+	private float maxStamina = 0f;
 
 	// Stamina lost per frame
-	private float staminaLoss;
+	[SerializeField] private float staminaLoss = 0f;
 
 	// Stamina regained per frame
-	private float staminaRegen;
-
-	void Start(){
-		// Initialize necessary variables
-		stamina = 0f;
-		staminaLoss = 0f;
-		staminaRegen = 0f;
-	}
+	[SerializeField] private float staminaRegen = 0f;
 	
 	// Update is called once per frame
 	void Update () {
-		if(stamina < maxStamina && !(Input.GetAxisRaw("Run") > 0)){
-			regen();
+		if(stamina < maxStamina){
+			if(!(Input.GetAxisRaw("Run") > 0)){
+				regen();
+			}
+
+			if(Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0){
+				regen();
+			}
+		}
+
+		if(stamina >= maxStamina){
+			stamina = maxStamina;
+		}
+
+		if(stamina <= 0f){
+			stamina = 0f;
 		}
 	}
 

@@ -61,11 +61,14 @@ public class PlayerController : MonoBehaviour {
 		Vector3 movement = (moveHorizontal + moveVertical).normalized;
 
 		if(run > 0 && stamina.getStamina() > 0){
-			stamina.decreaseStamina();
 			movement *= runSpeed;
+
+			if(horizontalMovement != 0 || verticalMovement != 0){
+				stamina.decreaseStamina();
+			}
 		}
 
-		if(!(run > 0)){
+		if(!(run > 0) || run > 0 && stamina.getStamina() <= 0){
 			movement *= moveSpeed;
 		}
 
