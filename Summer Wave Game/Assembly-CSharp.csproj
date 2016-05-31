@@ -45,7 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\Main Character\CameraOrbit.cs" />
      <Compile Include="Assets\Scripts\Main Character\CameraRotation.cs" />
      <Compile Include="Assets\Scripts\Main Character\Magic.cs" />
@@ -55,6 +54,7 @@
      <Compile Include="Assets\Scripts\Main Character\PlayerStamina.cs" />
      <Compile Include="Assets\Scripts\Main Character\Sword.cs" />
      <Compile Include="Assets\Scripts\Main Character\WeaponLevel.cs" />
+     <Compile Include="Assets\Scripts\Universal\Health.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
