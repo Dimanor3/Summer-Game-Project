@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour {
 	// Running?
 	private float run;
 
+	// Control which weapon is being used
+	private bool sword = true;
+
 	// Use this for initialization
 	void Start () {
 		// Initialize access to all outside classes
@@ -63,6 +66,20 @@ public class PlayerController : MonoBehaviour {
 
 		// Turn the main characters on the y axis
 		float yRot = Input.GetAxisRaw("Mouse X");
+
+		// Switch between weapons
+		float switchWep = Input.GetAxisRaw("Switch Weapons");
+
+		// Attack
+		float attack = Input.GetAxisRaw("Fire 1");
+
+		if(switchWep > 0 && sword){
+			sword = false;
+		}
+
+		if(switchWep > 0 && !sword){
+			sword = true;
+		}
 
 		// Calculations for main characters movement
 		//Vector3 moveHorizontal = transform.right * horizontalMovement;
@@ -115,5 +132,9 @@ public class PlayerController : MonoBehaviour {
 				stamina.decreaseStamina();
 			}
 		}
+	}
+
+	public bool getSword(){
+		return sword;
 	}
 }
