@@ -14,6 +14,7 @@ public class PlayerMotor : MonoBehaviour {
 	// Rotation speed
 	private float rotationSpeed = 0f;
 
+	// Rotate the player
 	Quaternion newRotation;
 
 	// Use this for initialization
