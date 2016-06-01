@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 	// Gives us access to all required outside classes
 	private PlayerMotor motor;
 	private PlayerStamina stamina;
-	[SerializeField] private CameraOrbit cam;
+	//[SerializeField] private CameraOrbit cam;
 
 	// Running?
 	private float run;
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
 		// Initialize access to all outside classes
 		motor = GetComponent<PlayerMotor>();
 		stamina = GetComponent<PlayerStamina>();
-		cam = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
+		//cam = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
 
 		// Initialize necessary variables
 		moveSpeed = 10f;
@@ -61,18 +61,19 @@ public class PlayerController : MonoBehaviour {
 		float verticalMovement = Input.GetAxisRaw("Vertical");
 
 		// Camera controls
-		float camX = Input.GetAxis("Mouse Y");
-		float camY = Input.GetAxis("Mouse X");
-
-		// Turn the main characters on the y axis
-		float yRot = Input.GetAxisRaw("Mouse X");
+		float camX = Input.GetAxisRaw("Mouse Y");
+		float camY = Input.GetAxisRaw("Mouse X");
 
 		// Switch between weapons
 		float switchWep = Input.GetAxisRaw("Switch Weapons");
 
 		// Attack
-		float attack = Input.GetAxisRaw("Fire 1");
+		float attack = Input.GetAxisRaw("Fire1");
 
+		// Free look?
+		float freeLook = Input.GetAxisRaw("FreeLook");
+
+		// Switch between weapons
 		if(switchWep > 0 && sword){
 			sword = false;
 		}
@@ -87,32 +88,40 @@ public class PlayerController : MonoBehaviour {
 		//Vector3 movement = (moveHorizontal + moveVertical).normalized;
 		Vector3 movement = new Vector3(horizontalMovement, 0f, verticalMovement);
 
+		// Rotate player
+		/*
 		if(horizontalMovement != 0f || verticalMovement != 0f){
 			Rotating(horizontalMovement, verticalMovement);
 		}
+		*/
+		Vector3 rot = new Vector3(0f, camY, 0f) * rotationSpeed;
 
+		// The players movement speed
 		movement *= running(run);
+
+		// Using stamina?
 		useStamina(run, horizontalMovement, verticalMovement);
 
-		// Calculations for main characters rotation
-		Vector3 rot = new Vector3(0f, yRot, 0f) * rotationSpeed;
-
-		// Move player
+		// Move/Rotate player
 		motor.Move(movement);
-		//motor.Rotate(rot);
 
-		camX = Mathf.Clamp(camX, -45f, 45f);
+		if(freeLook == 0){
+			motor.Rotate(rot);
+		}
 
-		cam.MoveHorizontal(camY);
-		cam.MoveVertical(camX);
+		// Oribital Camera
+		//cam.MoveHorizontal(camY);
+		//cam.MoveVertical(camX);
 	}
 
+	/*
 	void Rotating(float horizontal, float vertical){
 		// Create a new vector of the horizontal and vertical inputs.
 		Vector3 targetDirection = new Vector3(horizontal, 0f, vertical);
 
 		motor.Rotate(targetDirection, horizontal, vertical);
 	}
+	*/
 
 	float running(float run){
 		if(run > 0 && stamina.getStamina() > 0){
