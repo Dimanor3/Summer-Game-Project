@@ -3,25 +3,25 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
 	// Health
-	[SerializeField] private float hp;
+	[SerializeField] private int hp;
 
 	// Decrease Health
-	public void decreaseHealth(float dHP){
+	public void decreaseHealth(int dHP){
 		hp -= dHP;
 	}
 
 	// Increase Health
-	public void increaseHealth(float iHP){
+	public void increaseHealth(int iHP){
 		hp += iHP;
 	}
 
 	// Return Health
-	public float getHealth(){
+	public int getHealth(){
 		return hp;
 	}
 
 	// Set health
-	public void setHealth(float sHP){
+	public void setHealth(int sHP){
 		hp = sHP;
 	}
 }

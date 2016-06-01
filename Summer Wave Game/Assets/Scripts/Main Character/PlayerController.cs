@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour {
 
 		// Initialize necessary variables
 		moveSpeed = 10f;
-		rotationSpeed = 15f;
+		rotationSpeed = 3f;
 		runSpeed = 20f;
 		staminaDecrease = 5f;
 		staminaRegen = 2f;
@@ -64,15 +64,16 @@ public class PlayerController : MonoBehaviour {
 		float camX = Input.GetAxis("Mouse Y");
 		float camY = Input.GetAxis("Mouse X");
 
-		// Turn the main characters on the y axis
-		float yRot = Input.GetAxisRaw("Mouse X");
-
 		// Switch between weapons
 		float switchWep = Input.GetAxisRaw("Switch Weapons");
 
 		// Attack
-		float attack = Input.GetAxisRaw("Fire 1");
+		float attack = Input.GetAxisRaw("Fire1");
 
+		// Free look?
+		float freeLook = Input.GetAxisRaw("FreeLook");
+
+		// Switch between weapons
 		if(switchWep > 0 && sword){
 			sword = false;
 		}
@@ -82,38 +83,52 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		// Calculations for main characters movement
-		//Vector3 moveHorizontal = transform.right * horizontalMovement;
-		//Vector3 moveVertical = transform.forward * verticalMovement;
-		//Vector3 movement = (moveHorizontal + moveVertical).normalized;
-		Vector3 movement = new Vector3(horizontalMovement, 0f, verticalMovement);
+		Vector3 moveHorizontal = transform.right * horizontalMovement;
+		Vector3 moveVertical = transform.forward * verticalMovement;
+		Vector3 movement = (moveHorizontal + moveVertical).normalized;
+		//Vector3 movement = new Vector3(horizontalMovement, 0f, verticalMovement);
 
-		if(horizontalMovement != 0f || verticalMovement != 0f){
+		// Rotate player
+		/*if(horizontalMovement != 0f || verticalMovement != 0f){
 			Rotating(horizontalMovement, verticalMovement);
 		}
+		*/
+		Vector3 rot = new Vector3(0f, camY, 0f) * rotationSpeed;
 
+		// The players movement speed
 		movement *= running(run);
+
+		// Using stamina?
 		useStamina(run, horizontalMovement, verticalMovement);
 
-		// Calculations for main characters rotation
-		Vector3 rot = new Vector3(0f, yRot, 0f) * rotationSpeed;
-
-		// Move player
+		// Move/Rotate player
 		motor.Move(movement);
-		//motor.Rotate(rot);
 
-		camX = Mathf.Clamp(camX, -45f, 45f);
+		// Rotate player so long as free look isn't activated
+		if(freeLook == 0 && camX != 0 && camY != 0){
+			motor.Rotate(rot);
+			motor.PerformRotation();
+		}
 
-		cam.MoveHorizontal(camY);
-		cam.MoveVertical(camX);
+		// Oribital Camera
+		if(freeLook != 0){
+			cam.MoveHorizontal(camY);
+			cam.MoveVertical(camX);
+		}
 	}
-
+		
+	/*
 	void Rotating(float horizontal, float vertical){
 		// Create a new vector of the horizontal and vertical inputs.
 		Vector3 targetDirection = new Vector3(horizontal, 0f, vertical);
 
 		motor.Rotate(targetDirection, horizontal, vertical);
 	}
+	*/
 
+	// Checks to see whether the player is running or not,
+	// if they are then runSpeed is returned, else moveSpeed
+	// is returned, or if they're standing still 0f is returned
 	float running(float run){
 		if(run > 0 && stamina.getStamina() > 0){
 			return runSpeed;
@@ -126,6 +141,7 @@ public class PlayerController : MonoBehaviour {
 		return 0f;
 	}
 
+	// Uses stamina so that the player can't run forever
 	void useStamina(float run, float hM, float vM){
 		if(run > 0 && stamina.getStamina() > 0){
 			if(hM != 0 || vM != 0){
@@ -134,6 +150,8 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	// Returns true or false depending on whether or not
+	// the player is using sword or magic
 	public bool getSword(){
 		return sword;
 	}

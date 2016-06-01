@@ -34,7 +34,7 @@ public class PlayerMotor : MonoBehaviour {
 	// Run every physics iteration
 	void FixedUpdate(){
 		PerformMovement();
-		PerformRotation();
+		//PerformRotation();
 	}
 
 	// Gets a movement vector
@@ -43,14 +43,15 @@ public class PlayerMotor : MonoBehaviour {
 	}
 
 	// Gets a rotation vector
-	public void Rotate(Vector3 rot, float horizontal, float vertical){
+	public void Rotate(Vector3 rot){//, float horizontal, float vertical){
 		rotation = rot;
-
+		/*
 		// Create a rotation based on this new vector assuming that up is the global y axis.
 		Quaternion targetRotation = Quaternion.LookRotation(rotation, Vector3.up);
 
 		// Create a rotation that is an increment closer to the target rotation from the player's rotation.
 		newRotation = Quaternion.Lerp(rb.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+		*/
 	}
 
 	// Perform movement
@@ -61,8 +62,9 @@ public class PlayerMotor : MonoBehaviour {
 	}
 
 	// Perform rotation
-	void PerformRotation(){
-		rb.MoveRotation(newRotation);
+	public void PerformRotation(){
+		rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation));
+		//rb.MoveRotation(newRotation);
 	}
 
 	// Set rotationSpeed

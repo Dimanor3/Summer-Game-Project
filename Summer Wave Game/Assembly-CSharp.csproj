@@ -52,8 +52,9 @@
      <Compile Include="Assets\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
-     <Compile Include="Assets\Scripts\Main Character\CameraOrbit.cs" />
-     <Compile Include="Assets\Scripts\Main Character\CameraRotation.cs" />
+     <Compile Include="Assets\Scripts\Enemy\DummyEnemy.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Camera\CameraOrbit.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Camera\CameraRotation.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerDamageMath.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerMotor.cs" />
