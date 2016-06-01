@@ -2,10 +2,30 @@
 using System.Collections;
 
 public class CameraOrbit : MonoBehaviour {
+	// Reset camera rotation and position
+	private Vector3 resetCamRotation;
+	private Vector3 resetCamPosition;
+
+	void Start(){
+		// Initialize resetCam
+		resetCamRotation = new Vector3(22f, 0f, 0f);
+		resetCamPosition = new Vector3(0f, 3.882f, -3.964f);
+	}
+
+	void Update(){
+		// Reset camera position and rotation once the user stops free looking
+		if(Input.GetButtonUp("FreeLook")){
+			transform.localEulerAngles = resetCamRotation;
+			transform.localPosition = resetCamPosition;
+		}
+	}
+
+	// Rotate Horizontally
 	public void MoveHorizontal(float horizMove){
 		transform.RotateAround(transform.parent.position, Vector3.up, horizMove);
 	}
 
+	// Rotate Vertically
 	public void MoveVertical(float vertMove){
 		/*
 		if(transform.rotation.x < -.15f){

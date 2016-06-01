@@ -34,7 +34,7 @@ public class PlayerMotor : MonoBehaviour {
 	// Run every physics iteration
 	void FixedUpdate(){
 		PerformMovement();
-		PerformRotation();
+		//PerformRotation();
 	}
 
 	// Gets a movement vector
@@ -62,7 +62,7 @@ public class PlayerMotor : MonoBehaviour {
 	}
 
 	// Perform rotation
-	void PerformRotation(){
+	public void PerformRotation(){
 		rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation));
 		//rb.MoveRotation(newRotation);
 	}
