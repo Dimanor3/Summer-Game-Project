@@ -6,12 +6,12 @@ public class Health : MonoBehaviour {
 	[SerializeField] private int hp;
 
 	// Decrease Health
-	public void decreaseHealth(int dHP){
+	public void damage(int dHP){
 		hp -= dHP;
 	}
 
 	// Increase Health
-	public void increaseHealth(int iHP){
+	public void heal(int iHP){
 		hp += iHP;
 	}
 

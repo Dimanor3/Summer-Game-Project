@@ -35,9 +35,9 @@ public class Sword : MonoBehaviour {
 		PDM = GetComponent<PlayerDamageMath>();
 
 		// Initialize required variables
-		swordDmg = 0;
 		swordKills = 0;
 		baseDmg = 5;
+		swordDmg = baseDmg;
 		constLvlMod = 2;
 		constTenLvlMod = 5;
 		lvl50Mod = 15;
@@ -48,7 +48,8 @@ public class Sword : MonoBehaviour {
 	}
 
 	public void levelUp(){
-		swordDmg = PDM.getNewDmg(swordKills + 1, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		swordKills++;
+		swordDmg = PDM.getNewDmg(swordKills, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
 	}
 
 	public int getDamage(){

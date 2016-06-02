@@ -2,6 +2,7 @@
 
 [RequireComponent(typeof(PlayerMotor))]
 [RequireComponent(typeof(PlayerStamina))]
+[RequireComponent(typeof(Health))]
 public class PlayerController : MonoBehaviour {
 	// Movement and rotation speed
 	[SerializeField] private float moveSpeed;
@@ -19,7 +20,8 @@ public class PlayerController : MonoBehaviour {
 	// Gives us access to all required outside classes
 	private PlayerMotor motor;
 	private PlayerStamina stamina;
-	[SerializeField] private CameraOrbit cam;
+	private CameraOrbit cam;
+	private Health health;
 
 	// Running?
 	private float run;
@@ -27,12 +29,17 @@ public class PlayerController : MonoBehaviour {
 	// Control which weapon is being used
 	private bool sword = true;
 
+	// Player Health
+	private int hp;
+
+
 	// Use this for initialization
 	void Start () {
 		// Initialize access to all outside classes
 		motor = GetComponent<PlayerMotor>();
 		stamina = GetComponent<PlayerStamina>();
 		cam = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
+		health = GetComponent<Health>();
 
 		// Initialize necessary variables
 		moveSpeed = 10f;
@@ -41,6 +48,7 @@ public class PlayerController : MonoBehaviour {
 		staminaDecrease = 5f;
 		staminaRegen = 2f;
 		playerStamina = 1000f;
+		hp = 100;
 
 		// Initialize stamina properties
 		stamina.setRegen(staminaRegen);
@@ -49,6 +57,9 @@ public class PlayerController : MonoBehaviour {
 
 		// Initialize Rotation properties
 		motor.setRotationSpeed(rotationSpeed);
+
+		// Set players health
+		health.setHealth(hp);
 	}
 
 	// Update is called once per frame
@@ -154,5 +165,15 @@ public class PlayerController : MonoBehaviour {
 	// the player is using sword or magic
 	public bool getSword(){
 		return sword;
+	}
+
+	// Damage the player
+	public void hurt(int dmg){
+		health.damage(dmg);
+	}
+
+	// Heal player
+	public void heal(int heal){
+		health.heal(heal);
 	}
 }
