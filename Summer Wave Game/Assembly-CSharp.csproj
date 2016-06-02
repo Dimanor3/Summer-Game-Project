@@ -53,13 +53,14 @@
      <Compile Include="Assets\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
      <Compile Include="Assets\Scripts\Enemy\DummyEnemy.cs" />
+     <Compile Include="Assets\Scripts\Enemy\enemyDeath.cs" />
      <Compile Include="Assets\Scripts\Main Character\Camera\CameraOrbit.cs" />
      <Compile Include="Assets\Scripts\Main Character\Camera\CameraRotation.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\Main Character\PlayerDamageMath.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerMotor.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerStamina.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Magic.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Weapons\PlayerDamageMath.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Sword.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\WeaponLevel.cs" />
      <Compile Include="Assets\Scripts\Universal\Health.cs" />

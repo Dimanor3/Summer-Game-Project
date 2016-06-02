@@ -166,4 +166,14 @@ public class PlayerController : MonoBehaviour {
 	public bool getSword(){
 		return sword;
 	}
+
+	// Damage the player
+	public void hurt(int dmg){
+		health.damage(dmg);
+	}
+
+	// Heal player
+	public void heal(int heal){
+		health.heal(heal);
+	}
 }

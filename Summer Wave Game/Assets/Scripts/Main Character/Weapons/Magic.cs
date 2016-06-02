@@ -48,6 +48,7 @@ public class Magic : MonoBehaviour {
 	}
 
 	public void levelUp(){
+		magicKills++;
 		magicDmg = PDM.getNewDmg(magicKills + 1, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
 	}
 

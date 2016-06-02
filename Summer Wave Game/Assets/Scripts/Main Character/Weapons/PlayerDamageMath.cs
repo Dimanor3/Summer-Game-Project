@@ -31,7 +31,7 @@ public class PlayerDamageMath : MonoBehaviour {
 	}
 
 	public int getNewDmg(int level, int mod, int cL10M, int l50M, int l99M){
-		newDmg += baseDmg + level * mod + (level / 10) * cL10M;
+		newDmg += baseDmg + (level * mod) + ((int)Mathf.Floor(level / 10) * cL10M);
 
 		if(level >= 50){
 			newDmg += l50M;
