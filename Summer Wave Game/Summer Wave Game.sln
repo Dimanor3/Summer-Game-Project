@@ -1,11 +1,11 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer Wave Game.CSharp.Plugins", "Summer Wave Game.CSharp.Plugins.csproj", "{A3E80DDE-F05B-4185-5DDE-59C6A6C3A219}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{3BB1260B-1CEC-CAB2-D006-FDAAAD382E11}") = "Summer Wave Game", "Assembly-CSharp-firstpass.csproj", "{E343A4CB-8C13-7B95-2E26-9E96B08CCA93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer Wave Game.CSharp", "Summer Wave Game.CSharp.csproj", "{6D979306-9939-6CDB-5F46-A4929EB22A46}"
+Project("{3BB1260B-1CEC-CAB2-D006-FDAAAD382E11}") = "Summer Wave Game", "Assembly-CSharp.csproj", "{D45869AE-2B37-2C44-C0AA-AD8F9F8A3F7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Summer Wave Game.CSharp.Editor", "Summer Wave Game.CSharp.Editor.csproj", "{B5CE534F-2281-24B6-4380-FC9F59117C62}"
+Project("{3BB1260B-1CEC-CAB2-D006-FDAAAD382E11}") = "Summer Wave Game", "Assembly-CSharp-Editor.csproj", "{C5D0EDCA-E774-EB54-31AE-8F5B9997778D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,20 +13,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A3E80DDE-F05B-4185-5DDE-59C6A6C3A219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3E80DDE-F05B-4185-5DDE-59C6A6C3A219}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3E80DDE-F05B-4185-5DDE-59C6A6C3A219}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3E80DDE-F05B-4185-5DDE-59C6A6C3A219}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D979306-9939-6CDB-5F46-A4929EB22A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D979306-9939-6CDB-5F46-A4929EB22A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D979306-9939-6CDB-5F46-A4929EB22A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D979306-9939-6CDB-5F46-A4929EB22A46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5CE534F-2281-24B6-4380-FC9F59117C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5CE534F-2281-24B6-4380-FC9F59117C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5CE534F-2281-24B6-4380-FC9F59117C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5CE534F-2281-24B6-4380-FC9F59117C62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E343A4CB-8C13-7B95-2E26-9E96B08CCA93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E343A4CB-8C13-7B95-2E26-9E96B08CCA93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E343A4CB-8C13-7B95-2E26-9E96B08CCA93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E343A4CB-8C13-7B95-2E26-9E96B08CCA93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D45869AE-2B37-2C44-C0AA-AD8F9F8A3F7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D45869AE-2B37-2C44-C0AA-AD8F9F8A3F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D45869AE-2B37-2C44-C0AA-AD8F9F8A3F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D45869AE-2B37-2C44-C0AA-AD8F9F8A3F7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D0EDCA-E774-EB54-31AE-8F5B9997778D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D0EDCA-E774-EB54-31AE-8F5B9997778D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D0EDCA-E774-EB54-31AE-8F5B9997778D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D0EDCA-E774-EB54-31AE-8F5B9997778D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

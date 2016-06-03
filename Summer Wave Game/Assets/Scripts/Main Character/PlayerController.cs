@@ -42,9 +42,9 @@ public class PlayerController : MonoBehaviour {
 		health = GetComponent<Health>();
 
 		// Initialize necessary variables
-		moveSpeed = 10f;
-		rotationSpeed = 3f;
-		runSpeed = 20f;
+		moveSpeed = 5f;
+		rotationSpeed = 1.1f;
+		runSpeed = 7f;
 		staminaDecrease = 5f;
 		staminaRegen = 2f;
 		playerStamina = 1000f;
