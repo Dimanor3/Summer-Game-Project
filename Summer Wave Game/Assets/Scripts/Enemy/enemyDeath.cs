@@ -35,11 +35,16 @@ public class enemyDeath : MonoBehaviour {
 			hp.damage(col.gameObject.GetComponent<Sword>().getDamage());
 			enemyHealth = hp.getHealth();
 			use = true;
+
+			if(hp.getHealth() <= 0){
+				use = false;
+			}
 		}
 
-		if(col.gameObject.tag == "Sword" && hp.getHealth() <= 0){
+		if(col.gameObject.tag == "Sword" && hp.getHealth() <= 0 && !use){
 			col.gameObject.GetComponent<Sword>().levelUp();
 			print(col.gameObject.GetComponent<Sword>().getDamage());
+			use = true;
 		}
 
 
