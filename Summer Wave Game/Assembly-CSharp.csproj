@@ -45,6 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AnimRetriever.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
