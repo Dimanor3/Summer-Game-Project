@@ -85,6 +85,9 @@ public class PlayerController : MonoBehaviour {
 		// Free look?
 		float freeLook = Input.GetAxisRaw("FreeLook");
 
+		// Zoom in/out
+		float zoom = Input.GetAxisRaw("Mouse ScrollWheel");
+
 		// Switch between weapons
 		if(switchWep > 0 && sword){
 			sword = false;
@@ -115,6 +118,9 @@ public class PlayerController : MonoBehaviour {
 
 		// Move/Rotate player
 		motor.Move(movement);
+
+		// Set Zoom
+		cam.setZoom(zoom);
 
 		// Rotate player so long as free look isn't activated
 		if(freeLook == 0 && camX != 0 && camY != 0){
