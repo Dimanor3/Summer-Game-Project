@@ -45,7 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AnimRetriever.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\FireBaseScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
      <Compile Include="Assets\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
@@ -55,6 +54,7 @@
      <Compile Include="Assets\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
      <Compile Include="Assets\Scripts\Enemy\DummyEnemy.cs" />
      <Compile Include="Assets\Scripts\Enemy\enemyDeath.cs" />
+     <Compile Include="Assets\Scripts\Main Character\AnimRetriever.cs" />
      <Compile Include="Assets\Scripts\Main Character\Camera\CameraOrbit.cs" />
      <Compile Include="Assets\Scripts\Main Character\Camera\CameraRotation.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
@@ -65,6 +65,10 @@
      <Compile Include="Assets\Scripts\Main Character\Weapons\Sword.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\WeaponLevel.cs" />
      <Compile Include="Assets\Scripts\Universal\Health.cs" />
+     <Compile Include="Assets\Scripts\Universal\Object Pooling\PoolManager.cs" />
+     <Compile Include="Assets\Scripts\Universal\Object Pooling\PoolObject.cs" />
+     <Compile Include="Assets\Test\TestManager.cs" />
+     <Compile Include="Assets\Test\TestObject.cs" />
      <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
