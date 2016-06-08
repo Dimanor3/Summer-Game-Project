@@ -65,6 +65,10 @@
      <Compile Include="Assets\Scripts\Main Character\Weapons\Sword.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\WeaponLevel.cs" />
      <Compile Include="Assets\Scripts\Universal\Health.cs" />
+     <Compile Include="Assets\Scripts\Universal\Object Pooling\PoolManager.cs" />
+     <Compile Include="Assets\Scripts\Universal\Object Pooling\PoolObject.cs" />
+     <Compile Include="Assets\Test\TestManager.cs" />
+     <Compile Include="Assets\Test\TestObject.cs" />
      <None Include="Assets\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
