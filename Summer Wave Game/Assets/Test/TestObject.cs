@@ -8,7 +8,7 @@ public class TestObject : PoolObject {
 		transform.Translate(Vector3.forward * Time.deltaTime * 25);
 	}
 
-	public override void OnObjReuse(){
+	public override void OnObjectReuse(){
 		transform.localScale = Vector3.one;
 	}
 }

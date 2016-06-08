@@ -7,7 +7,6 @@ public class TestManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start(){
-		print(prefab);
 		PoolManager.instance.CreatePool(prefab, 3);
 	}
 	
