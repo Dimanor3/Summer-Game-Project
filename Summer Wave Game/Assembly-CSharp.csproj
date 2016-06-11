@@ -101,11 +101,12 @@
      <Compile Include="Assets\Scripts\Main Character\Weapons\PlayerDamageMath.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Sword.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\WeaponLevel.cs" />
+     <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\EZObjectPool.cs" />
+     <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\ParticleSystemDisable.cs" />
+     <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\PooledObject.cs" />
+     <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\TimedDisable.cs" />
      <Compile Include="Assets\Scripts\Universal\Health.cs" />
-     <Compile Include="Assets\Scripts\Universal\Object Pooling\PoolManager.cs" />
-     <Compile Include="Assets\Scripts\Universal\Object Pooling\PoolObject.cs" />
-     <Compile Include="Assets\Test\TestManager.cs" />
-     <Compile Include="Assets\Test\TestObject.cs" />
+     <Compile Include="Assets\test\move.cs" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

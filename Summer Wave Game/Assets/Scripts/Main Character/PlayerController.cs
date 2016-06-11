@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour {
 	private PlayerStamina stamina;
 	private CameraOrbit cam;
 	private Health health;
-	private Magic magic;
 
 	// Running?
 	private float run;
