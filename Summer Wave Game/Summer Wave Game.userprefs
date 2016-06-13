@@ -1,7 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.WindowsPlayer" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\test\test.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\test\move.cs">
     <Files>
+      <File FileName="Assets\test\test.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\PlayerStamina.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\PlayerController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\AnimRetriever.cs" Line="1" Column="1" />
@@ -9,9 +10,8 @@
       <File FileName="Assets\Scripts\Universal\Health.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\Weapons\PlayerDamageMath.cs" Line="1" Column="1" />
-      <File FileName="Assets\test\move.cs" Line="7" Column="49" />
-      <File FileName="Assets\Scripts\Universal\EZ Object Pools\Scripts\EZObjectPool.cs" Line="61" Column="51" />
-      <File FileName="Assets\test\test.cs" Line="15" Column="84" />
+      <File FileName="Assets\test\move.cs" Line="18" Column="32" />
+      <File FileName="Assets\Scripts\Universal\EZ Object Pools\Scripts\EZObjectPool.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

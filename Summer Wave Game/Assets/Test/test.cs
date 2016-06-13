@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class test : MonoBehaviour {
-	EZObjectPools.EZObjectPool pools;
+	public EZObjectPools.EZObjectPool pools;
 	[SerializeField] private GameObject gO;
 
 	// Use this for initialization
@@ -12,9 +12,8 @@ public class test : MonoBehaviour {
 
 	void Update(){
 		if(Input.GetKeyDown(KeyCode.Space)){
-			if(pools.TryGetNextObject(Vector3.zero, new Quaternion(0f, 0f, 0f, 0f), out gO)){
-				pools.TryGetNextObject(Vector3.zero, new Quaternion(0f,0f,0f,0f));
-			}
+			pools.TryGetNextObject(Vector3.zero, new Quaternion(0f,0f,0f,0f));
+			print(pools.AvailableObjectCount());
 		}
 	}
 }
