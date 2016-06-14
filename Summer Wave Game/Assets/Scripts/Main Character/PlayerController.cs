@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour {
 	// Player Health
 	private int hp;
 
-
+	// Control switch weapon so player can't hold button down
+	private bool switchedWeapon;
 	// Use this for initialization
 	void Start () {
 		// Initialize access to all outside classes
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour {
 		staminaRegen = 2f;
 		playerStamina = 1000f;
 		hp = 100;
+		switchedWeapon = false;
 
 		// Initialize stamina properties
 		stamina.setRegen(staminaRegen);
@@ -88,12 +90,19 @@ public class PlayerController : MonoBehaviour {
 		float zoom = Input.GetAxisRaw("Mouse ScrollWheel");
 
 		// Switch between weapons
-		if(switchWep > 0 && sword){
-			sword = false;
+		if(switchWep != 0 && !switchedWeapon){
+			if(sword){
+				sword = false;
+			}else{
+				sword = true;
+			}
+
+			switchedWeapon = true;
 		}
 
-		if(switchWep > 0 && !sword){
-			sword = true;
+		// Make sure that switchedWeapon is turned off after use
+		if(switchWep == 0){
+			switchedWeapon = false;
 		}
 
 		// Calculations for main characters movement

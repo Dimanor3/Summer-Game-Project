@@ -7,19 +7,20 @@ public class MagicPooling : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		fireball = Instantiate(Resources.Load("test/testPref")) as GameObject;
 		magicPool = EZObjectPools.EZObjectPool.CreateObjectPool(fireball, "Magic", 20, false, true, false);
 	}
 
 	// Spawn fireball
-	public void spawn(){
-		magicPool.TryGetNextObject(Vector3.zero, new Quaternion(0f, 0f, 0f, 0f));
+	public void spawn(Vector3 vec, Quaternion rot){
+		magicPool.TryGetNextObject(vec, rot);
 	}
 
-	public int getNumberOfActiveFireBalls(){
-		return magicPool.ActiveObjectCount();
+	public int getNumberOfAvailableFireballs(){
+		return magicPool.AvailableObjectCount();
 	}
 
-	public void deactivate(GameObject gO){
+	public void despawn(GameObject gO){
 		gO.SetActive(false);
 	}
 }
