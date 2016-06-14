@@ -16,4 +16,8 @@ public class test : MonoBehaviour {
 			print(pools.AvailableObjectCount());
 		}
 	}
+
+	public void deactivate(GameObject test){
+		test.SetActive(false);
+	}
 }

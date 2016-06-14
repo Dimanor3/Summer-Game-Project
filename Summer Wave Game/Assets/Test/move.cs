@@ -14,7 +14,7 @@ public class move : MonoBehaviour {
 		transform.localScale *= 1.1f;
 
 		if(GameObject.Find("GameObject").GetComponent<test>().pools.ActiveObjectCount() == 3 && Input.GetKeyDown(KeyCode.Space)){
-			gameObject.SetActive(false);
+			GameObject.Find("GameObject").GetComponent<test>().deactivate(gameObject);
 			transform.localScale = temp;
 		}
 	}

@@ -7,7 +7,6 @@ public class Magic : MonoBehaviour {
 	[SerializeField] private int magicKills;
 
 	// Gives access to required outside classes
-	private WeaponLevel ML;
 	private PlayerDamageMath PDM;
 
 	// Base magic damage
@@ -31,7 +30,6 @@ public class Magic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Initialize outside classes
-		ML = GetComponent<WeaponLevel>();
 		PDM = GetComponent<PlayerDamageMath>();
 
 		// Initialize required variables

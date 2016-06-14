@@ -97,10 +97,10 @@
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerMotor.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerStamina.cs" />
-     <Compile Include="Assets\Scripts\Main Character\Weapons\Magic.cs" />
-     <Compile Include="Assets\Scripts\Main Character\Weapons\PlayerDamageMath.cs" />
-     <Compile Include="Assets\Scripts\Main Character\Weapons\Sword.cs" />
-     <Compile Include="Assets\Scripts\Main Character\Weapons\WeaponLevel.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\MagicPooling.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Weapons\Sword\Sword.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Weapons\Universal\PlayerDamageMath.cs" />
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\EZObjectPool.cs" />
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\ParticleSystemDisable.cs" />
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\PooledObject.cs" />

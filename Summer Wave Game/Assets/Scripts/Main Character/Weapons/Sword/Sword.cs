@@ -7,7 +7,6 @@ public class Sword : MonoBehaviour {
 	[SerializeField] private int swordKills;
 
 	// Gives access to required outside classes
-	private WeaponLevel SL;
 	private PlayerDamageMath PDM;
 
 	// Base sword damage
@@ -31,7 +30,6 @@ public class Sword : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Initialize outside classes
-		SL = GetComponent<WeaponLevel>();
 		PDM = GetComponent<PlayerDamageMath>();
 
 		// Initialize required variables
