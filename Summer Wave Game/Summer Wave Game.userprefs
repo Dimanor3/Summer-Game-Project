@@ -2,16 +2,27 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.WindowsPlayer" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Main Character\Weapons\Magic\MagicPooling.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets\Scripts\Main Character\Weapons\Magic\MagicPooling.cs" Line="3" Column="1" />
       <File FileName="Assets\test\test.cs" Line="5" Column="22" />
       <File FileName="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" Line="89" Column="2" />
+=======
+      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\MagicPooling.cs" Line="6" Column="47" />
+      <File FileName="Assets\test\test.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" Line="62" Column="46" />
+>>>>>>> 7c9d1ff7ab0dbb6f49fe75d749c07586c363bd6f
       <File FileName="Assets\Scripts\Universal\Health.cs" Line="1" Column="1" />
       <File FileName="Assets\test\move.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\PlayerStamina.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\PlayerController.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Main Character\AnimRetriever.cs" Line="1" Column="1" />
+<<<<<<< HEAD
       <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="19" Column="3" />
       <File FileName="Assets\Scripts\Universal\EZ Object Pools\Scripts\EZObjectPool.cs" Line="2" Column="34" />
+=======
+      <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Universal\EZ Object Pools\Scripts\EZObjectPool.cs" Line="1" Column="1" />
+>>>>>>> 7c9d1ff7ab0dbb6f49fe75d749c07586c363bd6f
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
