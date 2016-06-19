@@ -106,8 +106,8 @@
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\PooledObject.cs" />
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\TimedDisable.cs" />
      <Compile Include="Assets\Scripts\Universal\Health.cs" />
-     <Compile Include="Assets\test\move.cs" />
-     <Compile Include="Assets\test\test.cs" />
+     <Compile Include="Assets\Test\move.cs" />
+     <Compile Include="Assets\Test\test.cs" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
