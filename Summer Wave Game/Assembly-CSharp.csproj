@@ -99,6 +99,7 @@
      <Compile Include="Assets\Scripts\Main Character\PlayerStamina.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\MagicPooling.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\MagicUse.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Sword\Sword.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Universal\PlayerDamageMath.cs" />
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\EZObjectPool.cs" />
