@@ -43,18 +43,15 @@ public class MagicUse : MonoBehaviour {
 		PDM = GetComponent<PlayerDamageMath>();
 
 		// Initialize required variables
-		magicDmg = 0;
-		magicKills = 0;
 		baseDmg = 10;
+		magicDmg = baseDmg;
+		magicKills = 0;
 		constLvlMod = 1;
 		constTenLvlMod = 10;
 		lvl50Mod = 30;
 		lvl99Mod = 50;
 		availableFireballs = 0;
 		clicked = false;
-
-		// Set Base Damage
-		PDM.setBaseDmg(baseDmg);
 	}
 	
 	// Update is called once per frame
@@ -83,7 +80,7 @@ public class MagicUse : MonoBehaviour {
 
 	public void levelUp(){
 		magicKills++;
-		magicDmg = PDM.getNewDmg(magicKills + 1, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		magicDmg = PDM.getNewDmg(magicKills + 1, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
 	}
 
 	public int getDamage(){
@@ -92,6 +89,6 @@ public class MagicUse : MonoBehaviour {
 
 	public void levelUpPotion(int lU){
 		magicKills += lU;
-		magicDmg = PDM.getNewDmg(magicKills + 1, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		magicDmg = PDM.getNewDmg(magicKills + 1, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
 	}
 }

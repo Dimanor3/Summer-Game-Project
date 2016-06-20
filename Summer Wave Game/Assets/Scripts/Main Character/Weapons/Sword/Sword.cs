@@ -40,14 +40,11 @@ public class Sword : MonoBehaviour {
 		constTenLvlMod = 5;
 		lvl50Mod = 15;
 		lvl99Mod = 30;
-
-		// Set Base Damage
-		PDM.setBaseDmg(baseDmg);
 	}
 
 	public void levelUp(){
 		swordKills++;
-		swordDmg = PDM.getNewDmg(swordKills, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		swordDmg = PDM.getNewDmg(swordKills, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
 	}
 
 	public int getDamage(){
@@ -56,6 +53,6 @@ public class Sword : MonoBehaviour {
 
 	public void levelUpPotion(int lU){
 		swordKills += lU;
-		swordDmg = PDM.getNewDmg(swordKills, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		swordDmg = PDM.getNewDmg(swordKills, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
 	}
 }

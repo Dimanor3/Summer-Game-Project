@@ -12,7 +12,7 @@ public class enemyDeath : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		hp = new Health();
-		enemyHealth = 10;
+		enemyHealth = 50;
 
 		hp.setHealth(enemyHealth);
 
@@ -43,14 +43,22 @@ public class enemyDeath : MonoBehaviour {
 
 		if(col.gameObject.tag == "Sword" && hp.getHealth() <= 0 && !use){
 			col.gameObject.GetComponent<Sword>().levelUp();
-			print(col.gameObject.GetComponent<Sword>().getDamage());
 			use = true;
 		}
 
+		if(col.gameObject.tag == "Magic"){
+			hp.damage(col.gameObject.GetComponent<Magic>().getDamage());
+			enemyHealth = hp.getHealth();
+		}
 
 		if(col.gameObject.tag == "Magic" && hp.getHealth() <= 0){
-			col.gameObject.GetComponent<MagicUse>().levelUp();
+			GameObject.FindWithTag("MagicController").GetComponentInChildren<MagicUse>().levelUp();
 		}
+	}
+
+	public void setHealth(int healthPoints){
+		enemyHealth = healthPoints;
+		hp.setHealth(enemyHealth);
 	}
 
 	public int getHealth(){

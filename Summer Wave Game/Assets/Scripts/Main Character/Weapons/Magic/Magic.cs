@@ -39,7 +39,11 @@ public class Magic : MonoBehaviour {
 		gameObject.SetActive(false);
 	}
 
-	public void setDamage(){
+	private void setDamage(){
 		damage = GameObject.FindWithTag("MagicController").GetComponentInChildren<MagicUse>().getDamage();
+	}
+
+	public int getDamage(){
+		return damage;
 	}
 }
