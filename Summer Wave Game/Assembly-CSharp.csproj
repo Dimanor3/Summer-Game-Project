@@ -99,8 +99,11 @@
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerMotor.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerStamina.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Potion\HealthPotion.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Potion\LevelUpPotion.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\MagicPooling.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\MagicUse.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Sword\Sword.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Universal\PlayerDamageMath.cs" />
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\EZObjectPool.cs" />
@@ -139,6 +142,7 @@
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+     <None Include="Assets\Hand painted bottle\readme.txt" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
