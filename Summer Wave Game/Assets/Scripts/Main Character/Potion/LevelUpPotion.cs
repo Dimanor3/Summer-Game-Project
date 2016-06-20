@@ -17,7 +17,7 @@ public class LevelUpPotion : MonoBehaviour {
 			if(col.gameObject.GetComponent<PlayerController>().getSword()){
 				GameObject.FindWithTag("Sword").GetComponent<Sword>().levelUpPotion(levelUp);
 			}else{
-				
+				GameObject.FindWithTag("MagicController").GetComponentInChildren<MagicUse>().levelUpPotion(levelUp);
 			}
 
 			gameObject.SetActive(false);

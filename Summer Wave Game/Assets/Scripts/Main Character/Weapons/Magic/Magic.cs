@@ -8,9 +8,15 @@ public class Magic : MonoBehaviour {
 	// Fireball speed
 	private float speed;
 
+	// Timer
+	[SerializeField] private int timer;
+	private int resetTimer;
+
 	// Use this for initialization
 	void Start () {
-		speed = 1f;
+		speed = 45f;
+		timer = 100;
+		resetTimer = 100;
 	}
 
 	void Update(){
@@ -19,16 +25,21 @@ public class Magic : MonoBehaviour {
 		}
 
 		// Move the fireball
-		transform.position += new Vector3(0f, 0f, speed);
-	}
+		gameObject.GetComponent<Rigidbody>().AddForce(GameObject.FindWithTag("Player").transform.forward * speed);
 
-	void OnCollisionEnter(Collision col){
-		if(col.gameObject.tag == "Enemy"){
+		timer--;
+
+		if(timer <= 0){
 			gameObject.SetActive(false);
+			timer = resetTimer;
 		}
 	}
 
+	void OnCollisionEnter(Collision col){
+		gameObject.SetActive(false);
+	}
+
 	public void setDamage(){
-		damage = GetComponentInParent<MagicUse>().getDamage();
+		damage = GameObject.FindWithTag("MagicController").GetComponentInChildren<MagicUse>().getDamage();
 	}
 }

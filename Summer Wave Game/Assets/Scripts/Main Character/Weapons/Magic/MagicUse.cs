@@ -69,7 +69,7 @@ public class MagicUse : MonoBehaviour {
 		if(!PC.getSword() && attack != 0 && availableFireballs != 0 && !clicked){
 			clicked = true;
 
-			MP.spawn(gameObject.transform.position, transform.rotation);
+			MP.spawn(gameObject.transform.position, gameObject.transform.parent.transform.rotation);
 		}
 
 		if(attack == 0){
