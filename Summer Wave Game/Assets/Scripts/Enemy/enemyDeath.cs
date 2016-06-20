@@ -49,7 +49,7 @@ public class enemyDeath : MonoBehaviour {
 
 
 		if(col.gameObject.tag == "Magic" && hp.getHealth() <= 0){
-			col.gameObject.GetComponent<Magic>().levelUp();
+			col.gameObject.GetComponent<MagicUse>().levelUp();
 		}
 	}
 

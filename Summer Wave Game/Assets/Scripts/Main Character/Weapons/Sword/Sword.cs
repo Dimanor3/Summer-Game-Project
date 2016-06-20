@@ -53,4 +53,9 @@ public class Sword : MonoBehaviour {
 	public int getDamage(){
 		return swordDmg;
 	}
+
+	public void levelUpPotion(int lU){
+		swordKills += lU;
+		swordDmg = PDM.getNewDmg(swordKills, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+	}
 }

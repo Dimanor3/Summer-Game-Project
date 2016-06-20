@@ -7,7 +7,7 @@ public class MagicPooling : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		fireball = Instantiate(Resources.Load("test/testPref")) as GameObject;
+		//fireball = Instantiate(Resources.Load("test/testPref")) as GameObject;
 		magicPool = EZObjectPools.EZObjectPool.CreateObjectPool(fireball, "Magic", 20, false, true, false);
 	}
 
