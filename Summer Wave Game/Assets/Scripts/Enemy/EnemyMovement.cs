@@ -28,6 +28,12 @@ public class EnemyMovement : MonoBehaviour {
 		if (fpsTargetDistance < attackDistance) {
 			baseAttack ();
 		}
+
+		if (fpsTargetDistance > enemyLookDistance) {
+			theRigidbody.velocity = Vector3.zero;
+			theRigidbody.angularVelocity = Vector3.zero;
+		}
+
 	}
 
 	void baseAttack (){
