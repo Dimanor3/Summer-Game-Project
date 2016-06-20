@@ -46,6 +46,9 @@ public class EnemyMovement : MonoBehaviour {
 		Quaternion rotation = Quaternion.LookRotation (fpsTarget.position - transform.position);
 		transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime*damping);
 		theRigidbody.AddForce (transform.forward*enemyMovementSpeed);
-
+		//Vector3 moveHorizontal = transform.right * enemyMovementSpeed;
+		//Vector3 moveVertical = transform.forward * enemyMovementSpeed;
+		//Vector3 movement = (moveHorizontal + moveVertical).normalized;
+		//theRigidbody.MovePosition (theRigidbody.position + Vector3 (10, 0, 0) * Time.fixedDeltaTime);
 	}
 }

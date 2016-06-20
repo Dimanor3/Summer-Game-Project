@@ -30,7 +30,7 @@ public class enemyDeath : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision col){
+	void OnTriggerEnter (Collider col){
 		if(col.gameObject.tag == "Sword" && Input.GetAxisRaw("Fire1") != 0f && !use){
 			hp.damage(col.gameObject.GetComponent<Sword>().getDamage());
 			enemyHealth = hp.getHealth();
