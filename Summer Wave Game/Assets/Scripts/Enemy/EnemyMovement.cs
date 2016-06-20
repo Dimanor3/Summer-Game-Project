@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		fpsTargetDistance = Vector3.Distance (fpsTarget.position, transform.position);
-		if(fpsTargetDistance < enemyLookDistance){
+		if(fpsTargetDistance < enemyLookDistance && fpsTargetDistance > attackDistance){
 			lookAtPlayer ();
 
 		}
