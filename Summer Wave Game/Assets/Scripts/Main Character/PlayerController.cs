@@ -191,4 +191,8 @@ public class PlayerController : MonoBehaviour {
 	public void heal(int heal){
 		health.heal(heal);
 	}
+
+	public int getHealth(){
+		return health.getHealth();
+	}
 }
