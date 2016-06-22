@@ -145,6 +145,10 @@ public class PlayerController : MonoBehaviour {
 			cam.MoveHorizontal(camY);
 			cam.MoveVertical(camX);
 		}
+
+		if(health.getHealth() > hp){
+			health.setHealth(hp);
+		}
 	}
 		
 	/*
