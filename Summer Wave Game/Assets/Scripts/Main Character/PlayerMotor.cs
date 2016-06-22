@@ -71,4 +71,8 @@ public class PlayerMotor : MonoBehaviour {
 	public void setRotationSpeed(float rS){
 		rotationSpeed = rS;
 	}
+
+	public void PerformDodge(Vector3 dodgeSpeed){
+		rb.MovePosition(rb.position + dodgeSpeed * Time.fixedDeltaTime);
+	}
 }

@@ -4,10 +4,11 @@
 [RequireComponent(typeof(PlayerStamina))]
 [RequireComponent(typeof(Health))]
 public class PlayerController : MonoBehaviour {
-	// Movement and rotation speed
+	// Movement, rotation and dodge speed
 	[SerializeField] private float moveSpeed;
 	[SerializeField] private float rotationSpeed;
 	[SerializeField] private float runSpeed;
+	[SerializeField] private float dodgeSpeed;
 
 	// Damping time
 	[SerializeField] private float speedDampTime = .1f;
@@ -22,9 +23,6 @@ public class PlayerController : MonoBehaviour {
 	private PlayerStamina stamina;
 	private CameraOrbit cam;
 	private Health health;
-
-	// Running?
-	private float run;
 
 	// Control which weapon is being used
 	private bool sword = true;
@@ -45,6 +43,7 @@ public class PlayerController : MonoBehaviour {
 		// Initialize necessary variables
 		moveSpeed = 5f;
 		rotationSpeed = 1.1f;
+		dodgeSpeed = 20f;
 		runSpeed = 7f;
 		staminaDecrease = 5f;
 		staminaRegen = 2f;
@@ -68,6 +67,9 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		// Running?
 		float run = Input.GetAxisRaw("Run");
+
+		// Dodging?
+		float dodge = Input.GetAxisRaw("Dodge");
 
 		// Main characters left, right, up and down movement
 		float horizontalMovement = Input.GetAxisRaw("Horizontal");
@@ -119,7 +121,9 @@ public class PlayerController : MonoBehaviour {
 		Vector3 rot = new Vector3(0f, camY, 0f) * rotationSpeed;
 
 		// The players movement speed
-		movement *= running(run);
+		if(dodge == 0){
+			movement *= running(run);
+		}
 
 		// Using stamina?
 		useStamina(run, horizontalMovement, verticalMovement);
@@ -140,6 +144,10 @@ public class PlayerController : MonoBehaviour {
 		if(freeLook != 0){
 			cam.MoveHorizontal(camY);
 			cam.MoveVertical(camX);
+		}
+
+		if(health.getHealth() > hp){
+			health.setHealth(hp);
 		}
 	}
 		

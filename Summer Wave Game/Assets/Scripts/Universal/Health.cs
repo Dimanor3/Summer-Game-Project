@@ -2,8 +2,17 @@
 using System.Collections;
 
 public class Health : MonoBehaviour {
+	// original Health
+	[SerializeField] private int originalHP;
+
 	// Health
 	[SerializeField] private int hp;
+
+	void Update(){
+		if(hp >= originalHP){
+			hp = originalHP;
+		}
+	}
 
 	// Decrease Health
 	public void damage(int dHP){
@@ -22,6 +31,7 @@ public class Health : MonoBehaviour {
 
 	// Set health
 	public void setHealth(int sHP){
-		hp = sHP;
+		originalHP = sHP;
+		hp = originalHP;
 	}
 }
