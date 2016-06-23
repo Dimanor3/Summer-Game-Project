@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 	private Health health;
 	private BarScript healthBar;
 	private BarScript staminaBar;
+	private WeaponActive WA;
 
 	// Control which weapon is being used
 	private bool sword = true;
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour {
 		health = GetComponent<Health>();
 		healthBar = GameObject.FindWithTag("PlayerHealthBar").GetComponent<BarScript>();
 		staminaBar = GameObject.FindWithTag("PlayerStaminaBar").GetComponent<BarScript>();
+		WA = gameObject.GetComponent<WeaponActive> ();
 
 		// Initialize necessary variables
 		moveSpeed = 5f;
@@ -74,6 +76,9 @@ public class PlayerController : MonoBehaviour {
 		// Set players stamina to draw
 		staminaBar.MaxValue = playerStamina;
 		staminaBar.Value = playerStamina;
+
+		// Initialize GUI to display sword and not magic
+		WA.switchActive(sword);
 	}
 
 	// Update is called once per frame
@@ -108,8 +113,10 @@ public class PlayerController : MonoBehaviour {
 		if(switchWep != 0 && !switchedWeapon){
 			if(sword){
 				sword = false;
+				WA.switchActive (sword);
 			}else{
 				sword = true;
+				WA.switchActive (sword);
 			}
 
 			switchedWeapon = true;

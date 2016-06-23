@@ -30,8 +30,8 @@ public class EnemyDamage : MonoBehaviour {
 		//sr = sword.GetComponent<Sword> ().swordLevel;
 		//mr = magicR.GetComponent<MagicUse> ().magicLevel;
 
-		sl = sword.GetComponent<Sword> ().swordLevel;
-		ml = magicR.GetComponent<MagicUse> ().magicLevel;
+		sl = sword.GetComponent<Sword> ().getSwordLevel();
+		ml = magicR.GetComponent<MagicUse> ().getMagicLevel();
 		//sl = sr.swordLevel;
 		//ml = mr.magicLevel;
 

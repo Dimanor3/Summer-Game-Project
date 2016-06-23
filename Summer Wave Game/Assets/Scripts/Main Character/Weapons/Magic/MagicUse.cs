@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerDamageMath))]
 [RequireComponent(typeof(MagicCooldownTimer))]
@@ -19,10 +20,10 @@ public class MagicUse : MonoBehaviour {
 	// Magic damage
 	[SerializeField] private int magicDmg;
 
-	public int magicLevel;
-
 	// The constant level modifier (occurs every level)
 	[SerializeField] private int constLvlMod;
+
+	private int magicLevel;
 
 	// The constant level modifier (occurs every 10 levels)
 	[SerializeField] private int constTenLvlMod;
@@ -39,6 +40,8 @@ public class MagicUse : MonoBehaviour {
 	// One at a time
 	private bool clicked;
 
+	private Text displayMagicLevel;
+
 	// Use this for initialization
 	void Start () {
 		// Initialize required variables
@@ -50,8 +53,8 @@ public class MagicUse : MonoBehaviour {
 		// Initialize required variables
 		baseDmg = 10;
 		magicDmg = baseDmg;
-		magicKills = 0;
 		magicLevel = 1;
+		magicKills = 0;
 		constLvlMod = 1;
 		constTenLvlMod = 10;
 		lvl50Mod = 30;
@@ -61,6 +64,9 @@ public class MagicUse : MonoBehaviour {
 
 		// Initialize magic cool down timer
 		MCDT.setTimer(50);
+
+		displayMagicLevel = GameObject.Find ("MagicLevel").GetComponent<Text> ();
+		displayMagicLevel.text = "Magic Level: " + magicLevel;
 	}
 	
 	// Update is called once per frame
@@ -94,20 +100,23 @@ public class MagicUse : MonoBehaviour {
 	public void levelUp(){
 		magicKills++;
 		magicLevel++;
-		magicDmg = PDM.getNewDmg(magicKills + 1, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		magicDmg = PDM.getNewDmg(magicLevel, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		displayMagicLevel.text = "Magic Level: " + magicLevel;
 	}
-
-	/*public int MagicLevel(){
-		return magicLevel;
-	}*/
 
 	public int getDamage(){
 		return magicDmg;
 	}
 
-	public void levelUpPotion(int lU){
+	public int getMagicLevel(){
+		return magicLevel;
+	}
+
+	// Level up player and update magic;
+	public void levelUp(int lU){
 		magicKills += lU;
 		magicLevel += lU;
-		magicDmg = PDM.getNewDmg(magicKills + 1, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		magicDmg = PDM.getNewDmg(magicLevel, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		displayMagicLevel.text = "Magic Level: " + magicLevel;
 	}
 }
