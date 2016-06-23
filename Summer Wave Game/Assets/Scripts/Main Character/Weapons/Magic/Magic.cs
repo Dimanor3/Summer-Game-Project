@@ -12,10 +12,13 @@ public class Magic : MonoBehaviour {
 	[SerializeField] private int timer;
 	private int resetTimer;
 
+	private GameObject player;
+
 	// Use this for initialization
 	void Start () {
-		speed = 45f;
-		resetTimer = 100;
+		player = GameObject.FindWithTag ("Player");
+		speed = 200f;
+		resetTimer = 200;
 		timer = resetTimer;
 	}
 
@@ -24,15 +27,18 @@ public class Magic : MonoBehaviour {
 			setDamage();
 		}
 
-		// Move the fireball
-		gameObject.GetComponent<Rigidbody>().AddForce(GameObject.FindWithTag("Player").transform.forward * speed);
-
 		timer--;
 
 		if(timer <= 0){
 			gameObject.SetActive(false);
 			timer = resetTimer;
 		}
+	}
+
+	void FixedUpdate(){
+		// Move the fireball
+		//gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * speed * Time.fixedDeltaTime);
+		gameObject.GetComponent<Rigidbody>().AddForce(player.transform.forward * speed * Time.fixedDeltaTime, ForceMode.Impulse);
 	}
 
 	void OnCollisionEnter(Collision col){

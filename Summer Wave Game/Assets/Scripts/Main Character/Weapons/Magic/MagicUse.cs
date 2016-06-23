@@ -83,7 +83,7 @@ public class MagicUse : MonoBehaviour {
 		if(!PC.getSword() && attack != 0 && availableFireballs != 0 && !clicked && MCDT.getTimer() <= 0){
 			clicked = true;
 
-			MP.spawn(gameObject.transform.position, new Quaternion(0f, gameObject.transform.parent.transform.rotation.y, 0f, 0f));
+			MP.spawn(gameObject.transform.position, gameObject.transform.rotation);
 
 			MCDT.reset();
 		}
