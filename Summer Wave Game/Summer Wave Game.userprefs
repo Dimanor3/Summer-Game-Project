@@ -2,8 +2,19 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs">
     <Files>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="33" Column="1" />
+=======
+      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\MagicUse.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="82" Column="24" />
+      <File FileName="Assets\Scripts\Universal\Spawner.cs" Line="81" Column="5" />
+>>>>>>> b491aed943492ec4e77391e35a5fbfe6e3d0cc6b
+=======
       <File FileName="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" Line="50" Column="2" />
       <File FileName="Assets\Scripts\Main Character\Weapons\Magic\MagicUse.cs" Line="1" Column="1" />
+>>>>>>> 1620f66c328e8581f0f60f5692d8cdfc5d883908
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

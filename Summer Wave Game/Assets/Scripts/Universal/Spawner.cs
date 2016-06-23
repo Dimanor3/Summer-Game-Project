@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour {
 	//private int spawnedEnemy = 0;
 
 	// The ID of the spawner
-	private int SpawnID;
+	//private int SpawnID;
 
 	private bool waveSpawn = false;
 	public bool Spawn = true;
@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// sets a random number for the id of the spawner
-		SpawnID = Random.Range(1, 500);
+		//SpawnID = Random.Range(1, 500);
 
 
 	}

@@ -6,6 +6,7 @@ public class enemyDeath : MonoBehaviour{
 	public EnemyHealth hp;
 
 	[SerializeField] private Spawner objSpawn;
+	//private int SpawnerID;
 	private int SpawnerID;
 
 	[SerializeField] private int enemyHealth;
@@ -78,15 +79,16 @@ public class enemyDeath : MonoBehaviour{
 	void removeMe ()
 	{
 		//objSpawn.BroadcastMessage("killEnemy", SpawnerID);
-		Destroy(gameObject);
 		objSpawn.killEnemy();
+		Destroy(gameObject);
+		//objSpawn.GetComponent<Spawner> ().killEnemy ();
 
 	}
 	// this gets called in the beginning when it is created by the spawner script
-	void setName(int sName)
+	/*void setName(int sName)
 	{
 		SpawnerID = sName;
-	}
+	}*/
 
 	void OnTriggerEnter (Collider col){
 		if(col.gameObject.tag == "Sword" && Input.GetAxisRaw("Fire1") != 0f && !use){
