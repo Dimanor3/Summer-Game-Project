@@ -29,12 +29,10 @@ public class EnemyMovement : MonoBehaviour {
 		if (fpsTargetDistance < attackDistance &&  hit == false) {
 			baseAttack ();
 			hit = true;
-			print (hit);
 		}
 
 		if (fpsTargetDistance > 3 && hit == true){
 			hit = false;
-			print (hit);
 
 			theRigidbody.velocity = Vector3.zero;
 			theRigidbody.angularVelocity = Vector3.zero;

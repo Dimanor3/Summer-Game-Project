@@ -50,7 +50,6 @@ public class EnemyDamage : MonoBehaviour {
 	void OnCollisionEnter (Collision col){
 		if(col.gameObject.tag == "Player" && timer <= 0){
 			col.gameObject.GetComponent<PlayerController>().hurt(dmg);
-			print("I work, yay!");
 			timer = resetTimer;
 		}
 	}
