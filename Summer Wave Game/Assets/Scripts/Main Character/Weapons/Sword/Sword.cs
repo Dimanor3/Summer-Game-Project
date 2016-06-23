@@ -15,6 +15,8 @@ public class Sword : MonoBehaviour {
 	// Sword damage
 	[SerializeField] private int swordDmg;
 
+	public int swordLevel;
+
 	// The constant level modifier (occurs every level)
 	[SerializeField] private int constLvlMod;
 
@@ -36,6 +38,7 @@ public class Sword : MonoBehaviour {
 		swordKills = 0;
 		baseDmg = 5;
 		swordDmg = baseDmg;
+		swordLevel = 1;
 		constLvlMod = 2;
 		constTenLvlMod = 5;
 		lvl50Mod = 15;
@@ -44,8 +47,13 @@ public class Sword : MonoBehaviour {
 
 	public void levelUp(){
 		swordKills++;
+		swordLevel++;
 		swordDmg = PDM.getNewDmg(swordKills, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
 	}
+
+	/*public int SwordLevel(){
+		return swordLevel;
+	}*/
 
 	public int getDamage(){
 		return swordDmg;
@@ -53,6 +61,7 @@ public class Sword : MonoBehaviour {
 
 	public void levelUpPotion(int lU){
 		swordKills += lU;
+		swordLevel += lU;
 		swordDmg = PDM.getNewDmg(swordKills, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
 	}
 }

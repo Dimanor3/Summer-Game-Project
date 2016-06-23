@@ -113,8 +113,13 @@
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\ParticleSystemDisable.cs" />
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\PooledObject.cs" />
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\TimedDisable.cs" />
+<<<<<<< HEAD
+     <Compile Include="Assets\Scripts\Universal\EnemyHealth.cs" />
+=======
      <Compile Include="Assets\Scripts\Universal\GUI Bars\BarScript.cs" />
+>>>>>>> a5b5f24245980383261e4befac29995cabc81459
      <Compile Include="Assets\Scripts\Universal\Health.cs" />
+     <Compile Include="Assets\Scripts\Universal\Spawner.cs" />
      <Compile Include="Assets\Test\move.cs" />
      <Compile Include="Assets\Test\test.cs" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
