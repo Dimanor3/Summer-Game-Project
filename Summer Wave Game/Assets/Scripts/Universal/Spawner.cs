@@ -5,32 +5,44 @@ using System.Collections.Generic;
 public class Spawner : MonoBehaviour {
 
 	// Color of the gizmo
-	public Color gizmoColor = Color.red;
+	[SerializeField] private Color gizmoColor = Color.red;
 
-	public GameObject Enemy;
+	[SerializeField] private GameObject spawn;
 
-	// Enemies and how many have been created and how many are to be created
-	public int totalEnemy = 10;
-	[SerializeField] private int numEnemy = 0;
+	private GameObject goblin;
+
+	// Spawn and how many have been created and how many are to be created
+	[SerializeField] private int totalSpawn;
+	[SerializeField] private int numSpawned;
 	//private int spawnedEnemy = 0;
 
 	// The ID of the spawner
 	//private int SpawnID;
 
 	private bool waveSpawn = false;
-	public bool Spawn = true;
+	[SerializeField] private bool Spawn = true;
 
 	//Wave controls
-	public int totalWaves = 5;
+	[SerializeField] private int totalWaves = 5;
 	private int numWaves = 0;
 
+	// Spawn location
+	[SerializeField] private Vector3 spawnPosition;
 
 	// Use this for initialization
 	void Start () {
 		// sets a random number for the id of the spawner
 		//SpawnID = Random.Range(1, 500);
 
+		if(spawn.tag == "Potion"){
+			totalSpawn = 1;
+		}else{
+			totalSpawn = 10;
+		}
 
+		numSpawned = 0;
+
+		goblin = GameObject.Find ("Goblin");
 	}
 
 	// Draws a cube to show where the spawn point is... Useful if you don't have a object that show the spawn point
@@ -52,16 +64,16 @@ public class Spawner : MonoBehaviour {
 				if (waveSpawn)
 				{
 					//spawns an enemy
-					spawnEnemy();
+					spawnThings();
 				}
-				if (numEnemy == 0)
+				if (numSpawned == 0)
 				{
 					// enables the wave spawner
 					waveSpawn = true;
 					//increase the number of waves
 					numWaves++;
 				}
-				if(numEnemy == totalEnemy)
+				if(numSpawned == totalSpawn)
 				{
 					// disables the wave spawner
 					waveSpawn = false;
@@ -71,21 +83,30 @@ public class Spawner : MonoBehaviour {
 	}
 
 	// spawns an enemy based on the enemy level that you selected
-	private void spawnEnemy()
+	private void spawnThings()
 	{
 		int spawnPointX = Random.Range (20, 70);
 		int spawnPointZ = Random.Range (40, 60);
-		Vector3 spawnPosition = new Vector3 (spawnPointX, 0.05f, spawnPointZ);
 
-		Instantiate(Enemy, spawnPosition, Quaternion.identity);
+		if (spawn.tag == "Potion") {
+			spawnPosition = new Vector3 (spawnPointX, 0.351f, spawnPointZ);
+		} else {
+			spawnPosition = new Vector3 (spawnPointX, 0.05f, spawnPointZ);
+		}
+
+		Instantiate(spawn, spawnPosition, Quaternion.identity);
 		//Enemy.SendMessage("setName", SpawnID);
 		// Increase the total number of enemies spawned and the number of spawned enemies
-		numEnemy++;
+		numSpawned++;
 		//spawnedEnemy++;
 	}
 
-	public void killEnemy(){
-		numEnemy--;
+	public void despawn(){
+		numSpawned--;
+	}
+
+	public int getNumSpawned(){
+		return numSpawned;
 	}
 
 	// Call this function from the enemy when it "dies" to remove an enemy count

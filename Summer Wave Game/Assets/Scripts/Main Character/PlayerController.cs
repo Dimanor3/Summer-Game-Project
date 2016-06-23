@@ -220,6 +220,7 @@ public class PlayerController : MonoBehaviour {
 		health.heal(heal);
 	}
 
+	// Return Player Health
 	public int getHealth(){
 		return health.getHealth();
 	}
