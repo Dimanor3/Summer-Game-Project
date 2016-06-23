@@ -12,12 +12,24 @@ public class Magic : MonoBehaviour {
 	[SerializeField] private int timer;
 	private int resetTimer;
 
+	// Player object
 	private GameObject player;
+
+	// Cause explosion
+	private GameObject explosion;
 
 	// Use this for initialization
 	void Start () {
+		// Initialize player object
 		player = GameObject.FindWithTag ("Player");
+
+		// Initialize explosion
+		explosion = GameObject.FindWithTag("Explosion");
+
+		// Initialize speed
 		speed = 200f;
+
+		// Initialize timer
 		resetTimer = 200;
 		timer = resetTimer;
 	}
@@ -44,10 +56,7 @@ public class Magic : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		gameObject.SetActive (false);
-		gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
-		gameObject.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
-		timer = resetTimer;
+		timer = 0;
 	}
 
 	private void setDamage(){
@@ -56,5 +65,9 @@ public class Magic : MonoBehaviour {
 
 	public int getDamage(){
 		return damage;
+	}
+
+	public void destroy(){
+		timer = 0;
 	}
 }

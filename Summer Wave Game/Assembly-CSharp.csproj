@@ -45,6 +45,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Music\infinite_fanstasy_free\Scene\infinite_fantasy_demo.cs" />
+     <Compile Include="Assets\Music\infinite_fanstasy_free\Scripts\Colliders\Adventure_Collider.cs" />
+     <Compile Include="Assets\Music\infinite_fanstasy_free\Scripts\Colliders\Ambiant_Collider.cs" />
+     <Compile Include="Assets\Music\infinite_fanstasy_free\Scripts\Colliders\Forte_Collider.cs" />
+     <Compile Include="Assets\Music\infinite_fanstasy_free\Scripts\Colliders\Heroic_Collider.cs" />
+     <Compile Include="Assets\Music\infinite_fanstasy_free\Scripts\Colliders\Med_Collider.cs" />
+     <Compile Include="Assets\Music\infinite_fanstasy_free\Scripts\Colliders\Soft_Collider.cs" />
+     <Compile Include="Assets\Music\infinite_fanstasy_free\Scripts\Colliders\Stop_Fantasy.cs" />
+     <Compile Include="Assets\Music\infinite_fanstasy_free\Scripts\collider_default.cs" />
+     <Compile Include="Assets\Music\infinite_fanstasy_free\Scripts\infinite_fantasy_free.cs" />
+     <Compile Include="Assets\Music\infinite_fanstasy_free\Scripts\scroll2.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
      <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -196,6 +207,7 @@
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\Music\infinite_fanstasy_free\README.txt" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
      <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />

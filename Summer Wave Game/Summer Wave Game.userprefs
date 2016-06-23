@@ -1,21 +1,49 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Main Character\Potion\HealthPotion.cs">
     <Files>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="33" Column="1" />
-=======
-      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\MagicUse.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="82" Column="24" />
-      <File FileName="Assets\Scripts\Universal\Spawner.cs" Line="81" Column="5" />
->>>>>>> b491aed943492ec4e77391e35a5fbfe6e3d0cc6b
-=======
-      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" Line="50" Column="2" />
-      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\MagicUse.cs" Line="1" Column="1" />
->>>>>>> 1620f66c328e8581f0f60f5692d8cdfc5d883908
+      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" Line="63" Column="21" />
+      <File FileName="Assets\PyroParticles\Prefab\Script\FireProjectileScript.cs" Line="82" Column="69" />
+      <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="82" Column="19" />
+      <File FileName="Assets\Scripts\Universal\Health.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Main Character\PlayerController.cs" Line="189" Column="4" />
+      <File FileName="Assets\Scripts\Enemy\EnemyDamage.cs" Line="29" Column="34" />
+      <File FileName="Assets\Scripts\Universal\Spawner.cs" Line="49" Column="21" />
+      <File FileName="Assets\Scripts\Main Character\Potion\HealthPotion.cs" Line="19" Column="4" />
+      <File FileName="Assets\Scripts\Main Character\Potion\LevelUpPotion.cs" Line="23" Column="24" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Summer Wave Game" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="PyroParticles" expanded="True">
+                <Node name="Prefab" expanded="True">
+                  <Node name="Script" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Scripts" expanded="True">
+                <Node name="Enemy" expanded="True" />
+                <Node name="Main Character" expanded="True">
+                  <Node name="Potion" expanded="True">
+                    <Node name="HealthPotion.cs" selected="True" />
+                  </Node>
+                  <Node name="Weapons" expanded="True">
+                    <Node name="Magic" expanded="True" />
+                  </Node>
+                </Node>
+                <Node name="Universal" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="Summer Wave Game" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

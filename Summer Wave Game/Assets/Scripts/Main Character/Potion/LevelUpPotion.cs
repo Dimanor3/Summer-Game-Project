@@ -20,7 +20,7 @@ public class LevelUpPotion : MonoBehaviour {
 				GameObject.FindWithTag("MagicController").GetComponentInChildren<MagicUse>().levelUp(levelUp);
 			}
 
-			gameObject.SetActive(false);
+			Destroy(gameObject);
 		}
 	}
 }

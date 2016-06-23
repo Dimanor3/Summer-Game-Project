@@ -15,7 +15,7 @@ public class HealthPotion : MonoBehaviour {
 		// Heal the player and deactivate
 		if(col.gameObject.tag == "Player"){
 			col.gameObject.GetComponent<PlayerController>().heal(heal);
-			gameObject.SetActive(false);
+			Destroy(gameObject);
 		}
 	}
 }

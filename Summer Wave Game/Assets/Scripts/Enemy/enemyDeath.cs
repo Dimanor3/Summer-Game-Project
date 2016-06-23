@@ -79,7 +79,7 @@ public class enemyDeath : MonoBehaviour{
 	void removeMe ()
 	{
 		//objSpawn.BroadcastMessage("killEnemy", SpawnerID);
-		objSpawn.killEnemy();
+		objSpawn.despawn();
 		Destroy(gameObject);
 		//objSpawn.GetComponent<Spawner> ().killEnemy ();
 
@@ -107,6 +107,8 @@ public class enemyDeath : MonoBehaviour{
 
 		if(col.gameObject.tag == "Magic"){
 			hp.damage(col.gameObject.GetComponent<Magic>().getDamage());
+			print (col.gameObject.GetComponent<Magic>().getDamage());
+			col.gameObject.GetComponent<Magic> ().destroy ();
 		}
 
 		if(col.gameObject.tag == "Magic" && hp.getHealth() <= 0){
