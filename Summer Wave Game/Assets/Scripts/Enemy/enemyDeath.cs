@@ -3,16 +3,51 @@ using System.Collections;
 
 [RequireComponent(typeof(Health))]
 public class enemyDeath : MonoBehaviour{
-	private Health hp;
+	public EnemyHealth hp;
 
 	[SerializeField] private int enemyHealth;
 
 	[SerializeField] private bool use;
 
+	public GameObject sword;
+
+	public GameObject magicR;
+
+	private Sword sr;
+
+	private MagicUse mr;
+
+	private int sl;
+
+	private int ml;
+
+	private int average;
+
 	// Use this for initialization
 	void Start(){
-		hp = new Health();
-		enemyHealth = 50;
+		//hp = new EnemyHealth ();
+		sword = GameObject.FindGameObjectWithTag ("Sword");
+		magicR = GameObject.FindGameObjectWithTag ("MagicPool");
+		//sr = sword.GetComponent<Sword> ().swordLevel;
+		//mr = magicR.GetComponent<MagicUse> ().magicLevel;
+
+		sl = sword.GetComponent<Sword> ().swordLevel;
+		ml = magicR.GetComponent<MagicUse> ().magicLevel;
+
+		//hp = (EnemyHealth)this.GetComponent(typeof(EnemyHealth));
+		//sr = (Sword)sword.GetComponent(typeof(Sword));
+		//mr = (MagicUse)magicR.GetComponent (typeof(MagicUse));
+
+		//sl = sr.swordLevel;
+		//ml = mr.magicLevel;
+
+		//sl = hp.gameObject.GetComponent<Sword> ().SwordLevel ();
+
+		//ml = hp.gameObject.GetComponent<MagicUse>().MagicLevel();
+
+		average = (sl + ml) / 2;
+		//enemyHealth = 50;
+		enemyHealth = 10 + (average * 2);
 
 		hp.setHealth(enemyHealth);
 

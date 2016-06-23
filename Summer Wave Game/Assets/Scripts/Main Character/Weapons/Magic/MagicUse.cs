@@ -17,6 +17,8 @@ public class MagicUse : MonoBehaviour {
 	// Magic damage
 	[SerializeField] private int magicDmg;
 
+	public int magicLevel;
+
 	// The constant level modifier (occurs every level)
 	[SerializeField] private int constLvlMod;
 
@@ -46,6 +48,7 @@ public class MagicUse : MonoBehaviour {
 		baseDmg = 10;
 		magicDmg = baseDmg;
 		magicKills = 0;
+		magicLevel = 0;
 		constLvlMod = 1;
 		constTenLvlMod = 10;
 		lvl50Mod = 30;
@@ -80,8 +83,13 @@ public class MagicUse : MonoBehaviour {
 
 	public void levelUp(){
 		magicKills++;
+		magicLevel++;
 		magicDmg = PDM.getNewDmg(magicKills + 1, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
 	}
+
+	/*public int MagicLevel(){
+		return magicLevel;
+	}*/
 
 	public int getDamage(){
 		return magicDmg;
@@ -89,6 +97,7 @@ public class MagicUse : MonoBehaviour {
 
 	public void levelUpPotion(int lU){
 		magicKills += lU;
+		magicLevel += lU;
 		magicDmg = PDM.getNewDmg(magicKills + 1, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
 	}
 }
