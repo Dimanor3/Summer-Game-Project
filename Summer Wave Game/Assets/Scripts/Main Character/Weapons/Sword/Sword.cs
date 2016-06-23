@@ -40,7 +40,7 @@ public class Sword : MonoBehaviour {
 
 		// Initialize required variables
 		swordKills = 0;
-		baseDmg = 5;
+		baseDmg = 12;
 		swordDmg = baseDmg;
 		constLvlMod = 2;
 		swordLevel = 1;
