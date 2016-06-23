@@ -8,6 +8,10 @@ public class Health : MonoBehaviour {
 	// Health
 	[SerializeField] private int hp;
 
+	void Start(){
+		
+	}
+
 	void Update(){
 		if(hp >= originalHP){
 			hp = originalHP;

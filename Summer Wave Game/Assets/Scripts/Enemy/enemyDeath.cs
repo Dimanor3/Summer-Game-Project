@@ -11,7 +11,7 @@ public class enemyDeath : MonoBehaviour{
 
 	// Use this for initialization
 	void Start(){
-		hp = new Health();
+		hp = GetComponent<Health>();
 		enemyHealth = 50;
 
 		hp.setHealth(enemyHealth);
