@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour {
 	public float attackDistance;
 	public float enemyMovementSpeed;
 	public float damping;
+	private bool hit = false;
 	[SerializeField] private Transform fpsTarget;
 	Rigidbody theRigidbody;
 
@@ -21,12 +22,27 @@ public class EnemyMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		fpsTargetDistance = Vector3.Distance (fpsTarget.position, transform.position);
-		if(fpsTargetDistance < enemyLookDistance && fpsTargetDistance > attackDistance){
+		if(fpsTargetDistance < enemyLookDistance && fpsTargetDistance > attackDistance && hit == false){
 			lookAtPlayer ();
 
 		}
-		if (fpsTargetDistance < attackDistance) {
+		if (fpsTargetDistance < attackDistance &&  hit == false) {
 			baseAttack ();
+			hit = true;
+			print (hit);
+		}
+
+		if (fpsTargetDistance > 3 && hit == true){
+			hit = false;
+			print (hit);
+
+			theRigidbody.velocity = Vector3.zero;
+			theRigidbody.angularVelocity = Vector3.zero;
+		}
+
+		if (fpsTargetDistance <= attackDistance && hit == true) {
+			hitReturn ();
+
 		}
 
 		if (fpsTargetDistance > enemyLookDistance) {
@@ -41,11 +57,18 @@ public class EnemyMovement : MonoBehaviour {
 		theRigidbody.angularVelocity = Vector3.zero;
 		//theRigidbody.position = transform.position;
 
+
 	}
+
+	void hitReturn (){
+		theRigidbody.AddForce (transform.forward * (-1 * enemyMovementSpeed));
+
+	}
+
 	void lookAtPlayer (){
 		Quaternion rotation = Quaternion.LookRotation (fpsTarget.position - transform.position);
 		transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime*damping);
-		theRigidbody.AddForce (transform.forward*enemyMovementSpeed);
+		theRigidbody.AddForce (transform.forward * enemyMovementSpeed);
 		//Vector3 moveHorizontal = transform.right * enemyMovementSpeed;
 		//Vector3 moveVertical = transform.forward * enemyMovementSpeed;
 		//Vector3 movement = (moveHorizontal + moveVertical).normalized;
