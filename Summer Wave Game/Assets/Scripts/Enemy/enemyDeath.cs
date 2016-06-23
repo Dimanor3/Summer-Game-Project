@@ -6,11 +6,8 @@ public class enemyDeath : MonoBehaviour{
 	public EnemyHealth hp;
 
 	[SerializeField] private Spawner objSpawn;
-<<<<<<< HEAD
 	//private int SpawnerID;
-=======
 	private int SpawnerID;
->>>>>>> 4d1a8579741ec7b182de8a8c486ad6d348918276
 
 	[SerializeField] private int enemyHealth;
 
@@ -33,11 +30,7 @@ public class enemyDeath : MonoBehaviour{
 	// Use this for initialization
 	void Start(){
 		//hp = new EnemyHealth ();
-<<<<<<< HEAD
-		objSpawn = GameObject.FindWithTag ("Spawner").GetComponentsInChildren<Spawner>();
-=======
 		objSpawn = GameObject.FindWithTag ("Spawner").GetComponentInChildren<Spawner>();
->>>>>>> 4d1a8579741ec7b182de8a8c486ad6d348918276
 		sword = GameObject.FindGameObjectWithTag ("Sword");
 		magicR = GameObject.FindGameObjectWithTag ("MagicPool");
 		//sr = sword.GetComponent<Sword> ().swordLevel;
@@ -86,14 +79,9 @@ public class enemyDeath : MonoBehaviour{
 	void removeMe ()
 	{
 		//objSpawn.BroadcastMessage("killEnemy", SpawnerID);
-<<<<<<< HEAD
 		objSpawn.killEnemy();
 		Destroy(gameObject);
 		//objSpawn.GetComponent<Spawner> ().killEnemy ();
-=======
-		Destroy(gameObject);
-		objSpawn.killEnemy();
->>>>>>> 4d1a8579741ec7b182de8a8c486ad6d348918276
 
 	}
 	// this gets called in the beginning when it is created by the spawner script
