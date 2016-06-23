@@ -14,8 +14,8 @@ public class Magic : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 45f;
-		resetTimer = 100;
+		speed = 200f;
+		resetTimer = 200;
 		timer = resetTimer;
 	}
 
@@ -25,7 +25,8 @@ public class Magic : MonoBehaviour {
 		}
 
 		// Move the fireball
-		gameObject.GetComponent<Rigidbody>().AddForce(GameObject.FindWithTag("Player").transform.forward * speed);
+		gameObject.GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * speed * Time.deltaTime);
+		//gameObject.GetComponent<Rigidbody>().AddForce(GameObject.FindWithTag("Player").transform.forward * speed * Time.deltaTime);
 
 		timer--;
 
