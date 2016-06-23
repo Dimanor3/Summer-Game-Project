@@ -5,8 +5,8 @@ using System.Collections;
 public class enemyDeath : MonoBehaviour{
 	public EnemyHealth hp;
 
-	private GameObject objSpawn;
-	private int SpawnerID;
+	[SerializeField] private Spawner objSpawn;
+	//private int SpawnerID;
 
 	[SerializeField] private int enemyHealth;
 
@@ -29,7 +29,7 @@ public class enemyDeath : MonoBehaviour{
 	// Use this for initialization
 	void Start(){
 		//hp = new EnemyHealth ();
-		objSpawn = GameObject.FindWithTag ("Spawner");
+		objSpawn = GameObject.FindWithTag ("Spawner").GetComponentsInChildren<Spawner>();
 		sword = GameObject.FindGameObjectWithTag ("Sword");
 		magicR = GameObject.FindGameObjectWithTag ("MagicPool");
 		//sr = sword.GetComponent<Sword> ().swordLevel;
@@ -77,16 +77,17 @@ public class enemyDeath : MonoBehaviour{
 	// Call this when you want to kill the enemy
 	void removeMe ()
 	{
-		objSpawn.BroadcastMessage("killEnemy", SpawnerID);
+		//objSpawn.BroadcastMessage("killEnemy", SpawnerID);
+		objSpawn.killEnemy();
 		Destroy(gameObject);
-		objSpawn.GetComponent<Spawner> ().killEnemy ();
+		//objSpawn.GetComponent<Spawner> ().killEnemy ();
 
 	}
 	// this gets called in the beginning when it is created by the spawner script
-	void setName(int sName)
+	/*void setName(int sName)
 	{
 		SpawnerID = sName;
-	}
+	}*/
 
 	void OnTriggerEnter (Collider col){
 		if(col.gameObject.tag == "Sword" && Input.GetAxisRaw("Fire1") != 0f && !use){
