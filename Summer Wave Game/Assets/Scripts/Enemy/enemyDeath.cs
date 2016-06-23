@@ -5,6 +5,9 @@ using System.Collections;
 public class enemyDeath : MonoBehaviour{
 	public EnemyHealth hp;
 
+	private GameObject objSpawn;
+	private int SpawnerID;
+
 	[SerializeField] private int enemyHealth;
 
 	[SerializeField] private bool use;
@@ -26,6 +29,7 @@ public class enemyDeath : MonoBehaviour{
 	// Use this for initialization
 	void Start(){
 		//hp = new EnemyHealth ();
+		objSpawn = (GameObject) GameObject.FindWithTag ("Spawner");
 		sword = GameObject.FindGameObjectWithTag ("Sword");
 		magicR = GameObject.FindGameObjectWithTag ("MagicPool");
 		//sr = sword.GetComponent<Sword> ().swordLevel;
@@ -60,13 +64,27 @@ public class enemyDeath : MonoBehaviour{
 	void Update(){
 		// Kill enemy if dead
 		if(hp.getHealth() <= 0 || gameObject.transform.position.y <= -10){
-			transform.position = new Vector3(999f, 999f, 999f);
+			removeMe ();
+			objSpawn.GetComponent<Spawner> ().killEnemy (SpawnerID);
+			//transform.position = new Vector3(999f, 999f, 999f);
 		}
 
 		// Control sword attack (so player can't spam)
 		if(Input.GetAxisRaw("Fire1") == 0f){
 			use = false;
 		}
+	}
+
+	// Call this when you want to kill the enemy
+	void removeMe ()
+	{
+		objSpawn.BroadcastMessage("killEnemy", SpawnerID);
+		Destroy(gameObject);
+	}
+	// this gets called in the beginning when it is created by the spawner script
+	void setName(int sName)
+	{
+		SpawnerID = sName;
 	}
 
 	void OnTriggerEnter (Collider col){
