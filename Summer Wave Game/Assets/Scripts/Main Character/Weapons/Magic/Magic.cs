@@ -31,6 +31,8 @@ public class Magic : MonoBehaviour {
 
 		if(timer <= 0){
 			gameObject.SetActive(false);
+			gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
+			gameObject.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
 			timer = resetTimer;
 		}
 	}
@@ -42,9 +44,10 @@ public class Magic : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		if (col.gameObject.tag == "Enemy") {
-			gameObject.SetActive (false);
-		}
+		gameObject.SetActive (false);
+		gameObject.GetComponent<Rigidbody> ().velocity = Vector3.zero;
+		gameObject.GetComponent<Rigidbody> ().angularVelocity = Vector3.zero;
+		timer = resetTimer;
 	}
 
 	private void setDamage(){
