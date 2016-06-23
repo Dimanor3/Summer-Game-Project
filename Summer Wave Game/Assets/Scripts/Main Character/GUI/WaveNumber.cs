@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class WaveNumber : MonoBehaviour {
 
-	private Spawner wave;
+	[SerializeField] private Spawner wave;
 	[SerializeField] private Text valueText;
 
 	// Use this for initialization
 	void Start () {
-		wave = GameObject.Find("Goblin").GetComponent<Spawner>();
+		//wave = GameObject.Find("Goblin").GetComponent<Spawner>();
 	}
 	
 	// Update is called once per frame

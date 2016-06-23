@@ -108,6 +108,7 @@
      <Compile Include="Assets\Scripts\Main Character\Camera\CameraOrbit.cs" />
      <Compile Include="Assets\Scripts\Main Character\Camera\CameraRotation.cs" />
      <Compile Include="Assets\Scripts\Main Character\GUI\DrawText.cs" />
+     <Compile Include="Assets\Scripts\Main Character\GUI\WaveNumber.cs" />
      <Compile Include="Assets\Scripts\Main Character\GUI\WeaponActive.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Main Character\PlayerMotor.cs" />

@@ -30,8 +30,8 @@ public class enemyDeath : MonoBehaviour{
 	void Start(){
 		//hp = new EnemyHealth ();
 		objSpawn = GameObject.FindWithTag ("Spawner").GetComponentInChildren<Spawner>();
-		sword = GameObject.FindGameObjectWithTag ("Sword");
-		magicR = GameObject.FindGameObjectWithTag ("MagicPool");
+		sword = GameObject.FindWithTag ("Sword");
+		magicR = GameObject.FindWithTag ("MagicPool");
 		//sr = sword.GetComponent<Sword> ().swordLevel;
 		//mr = magicR.GetComponent<MagicUse> ().magicLevel;
 
