@@ -25,6 +25,7 @@ public class enemyDeath : MonoBehaviour{
 
 	// Use this for initialization
 	void Start(){
+<<<<<<< HEAD
 		//hp = new EnemyHealth ();
 		sword = GameObject.FindGameObjectWithTag ("Sword");
 		magicR = GameObject.FindGameObjectWithTag ("MagicPool");
@@ -48,6 +49,10 @@ public class enemyDeath : MonoBehaviour{
 		average = (sl + ml) / 2;
 		//enemyHealth = 50;
 		enemyHealth = 10 + (average * 2);
+=======
+		hp = GetComponent<Health>();
+		enemyHealth = 50;
+>>>>>>> a5b5f24245980383261e4befac29995cabc81459
 
 		hp.setHealth(enemyHealth);
 

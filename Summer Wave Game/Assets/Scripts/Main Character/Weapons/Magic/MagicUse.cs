@@ -2,11 +2,13 @@
 using System.Collections;
 
 [RequireComponent(typeof(PlayerDamageMath))]
+[RequireComponent(typeof(MagicCooldownTimer))]
 public class MagicUse : MonoBehaviour {
 	// Gives access to required outside classes
 	private PlayerController PC;
 	private MagicPooling MP;
 	private PlayerDamageMath PDM;
+	private MagicCooldownTimer MCDT;
 
 	// Number of active fireballs
 	[SerializeField] private int availableFireballs;
@@ -43,6 +45,7 @@ public class MagicUse : MonoBehaviour {
 		PC = GetComponentInParent<PlayerController>();
 		MP = GetComponent<MagicPooling>();
 		PDM = GetComponent<PlayerDamageMath>();
+		MCDT = GetComponent<MagicCooldownTimer>();
 
 		// Initialize required variables
 		baseDmg = 10;
@@ -55,10 +58,15 @@ public class MagicUse : MonoBehaviour {
 		lvl99Mod = 50;
 		availableFireballs = 0;
 		clicked = false;
+
+		// Initialize magic cool down timer
+		MCDT.setTimer(50);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		MCDT.reduceTimer();
+
 		// Set the number of active fireballs
 		availableFireballs = MP.getNumberOfAvailableFireballs();
 
@@ -66,10 +74,12 @@ public class MagicUse : MonoBehaviour {
 		float attack = Input.GetAxisRaw("Fire1");
 
 		// Use magic if possible
-		if(!PC.getSword() && attack != 0 && availableFireballs != 0 && !clicked){
+		if(!PC.getSword() && attack != 0 && availableFireballs != 0 && !clicked && MCDT.getTimer() <= 0){
 			clicked = true;
 
-			MP.spawn(gameObject.transform.position, gameObject.transform.parent.transform.rotation);
+			MP.spawn(gameObject.transform.position, new Quaternion(0f, gameObject.transform.parent.transform.rotation.y, 0f, 0f));
+
+			MCDT.reset();
 		}
 
 		if(attack == 0){

@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour {
 	private PlayerStamina stamina;
 	private CameraOrbit cam;
 	private Health health;
+	private BarScript healthBar;
+	private BarScript staminaBar;
 
 	// Control which weapon is being used
 	private bool sword = true;
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Control switch weapon so player can't hold button down
 	private bool switchedWeapon;
+
 	// Use this for initialization
 	void Start () {
 		// Initialize access to all outside classes
@@ -39,6 +42,8 @@ public class PlayerController : MonoBehaviour {
 		stamina = GetComponent<PlayerStamina>();
 		cam = GameObject.Find("Main Camera").GetComponent<CameraOrbit>();
 		health = GetComponent<Health>();
+		healthBar = GameObject.FindWithTag("PlayerHealthBar").GetComponent<BarScript>();
+		staminaBar = GameObject.FindWithTag("PlayerStaminaBar").GetComponent<BarScript>();
 
 		// Initialize necessary variables
 		moveSpeed = 5f;
@@ -61,6 +66,14 @@ public class PlayerController : MonoBehaviour {
 
 		// Set players health
 		health.setHealth(hp);
+
+		// Set players health to draw
+		healthBar.MaxValue = (float)hp;
+		healthBar.Value = (float)hp;
+
+		// Set players stamina to draw
+		staminaBar.MaxValue = playerStamina;
+		staminaBar.Value = playerStamina;
 	}
 
 	// Update is called once per frame
@@ -82,14 +95,14 @@ public class PlayerController : MonoBehaviour {
 		// Switch between weapons
 		float switchWep = Input.GetAxisRaw("Switch Weapons");
 
-		// Attack
-		float attack = Input.GetAxisRaw("Fire1");
-
 		// Free look?
 		float freeLook = Input.GetAxisRaw("FreeLook");
 
 		// Zoom in/out
 		float zoom = Input.GetAxisRaw("Mouse ScrollWheel");
+
+		healthBar.Value = health.getHealth();
+		staminaBar.Value = stamina.getStamina();
 
 		// Switch between weapons
 		if(switchWep != 0 && !switchedWeapon){

@@ -15,8 +15,8 @@ public class Magic : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		speed = 45f;
-		timer = 100;
 		resetTimer = 100;
+		timer = resetTimer;
 	}
 
 	void Update(){
@@ -36,7 +36,9 @@ public class Magic : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		gameObject.SetActive(false);
+		if (col.gameObject.tag == "Enemy") {
+			gameObject.SetActive (false);
+		}
 	}
 
 	private void setDamage(){

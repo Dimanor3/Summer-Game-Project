@@ -102,6 +102,7 @@
      <Compile Include="Assets\Scripts\Main Character\Potion\HealthPotion.cs" />
      <Compile Include="Assets\Scripts\Main Character\Potion\LevelUpPotion.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" />
+     <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\MagicCooldownTimer.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\MagicPooling.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Magic\MagicUse.cs" />
      <Compile Include="Assets\Scripts\Main Character\Weapons\Sword\Sword.cs" />
@@ -112,7 +113,11 @@
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\ParticleSystemDisable.cs" />
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\PooledObject.cs" />
      <Compile Include="Assets\Scripts\Universal\EZ Object Pools\Scripts\PooledObjects\TimedDisable.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\Universal\EnemyHealth.cs" />
+=======
+     <Compile Include="Assets\Scripts\Universal\GUI Bars\BarScript.cs" />
+>>>>>>> a5b5f24245980383261e4befac29995cabc81459
      <Compile Include="Assets\Scripts\Universal\Health.cs" />
      <Compile Include="Assets\Scripts\Universal\Spawner.cs" />
      <Compile Include="Assets\Test\move.cs" />
