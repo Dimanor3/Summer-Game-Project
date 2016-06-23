@@ -35,8 +35,8 @@ public class enemyDeath : MonoBehaviour{
 		//sr = sword.GetComponent<Sword> ().swordLevel;
 		//mr = magicR.GetComponent<MagicUse> ().magicLevel;
 
-		sl = sword.GetComponent<Sword> ().swordLevel;
-		ml = magicR.GetComponent<MagicUse> ().magicLevel;
+		sl = sword.GetComponent<Sword> ().getSwordLevel();
+		ml = magicR.GetComponent<MagicUse> ().getMagicLevel();
 
 		//hp = (EnemyHealth)this.GetComponent(typeof(EnemyHealth));
 		//sr = (Sword)sword.GetComponent(typeof(Sword));

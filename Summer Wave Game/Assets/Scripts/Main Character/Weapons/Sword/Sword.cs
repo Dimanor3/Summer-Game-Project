@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(PlayerDamageMath))]
 public class Sword : MonoBehaviour {
@@ -15,7 +16,7 @@ public class Sword : MonoBehaviour {
 	// Sword damage
 	[SerializeField] private int swordDmg;
 
-	public int swordLevel;
+	private int swordLevel;
 
 	// The constant level modifier (occurs every level)
 	[SerializeField] private int constLvlMod;
@@ -29,6 +30,9 @@ public class Sword : MonoBehaviour {
 	// Occurs once at level 99
 	[SerializeField] private int lvl99Mod;
 
+	// Text to display level
+	private Text displaySwordLevel;
+
 	// Use this for initialization
 	void Start () {
 		// Initialize outside classes
@@ -38,30 +42,35 @@ public class Sword : MonoBehaviour {
 		swordKills = 0;
 		baseDmg = 5;
 		swordDmg = baseDmg;
-		swordLevel = 1;
 		constLvlMod = 2;
+		swordLevel = 1;
 		constTenLvlMod = 5;
 		lvl50Mod = 15;
 		lvl99Mod = 30;
+
+		displaySwordLevel = GameObject.Find ("SwordLevel").GetComponent<Text> ();
+		displaySwordLevel.text = "Sword Level: " + swordLevel;
 	}
 
 	public void levelUp(){
 		swordKills++;
 		swordLevel++;
-		swordDmg = PDM.getNewDmg(swordKills, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		swordDmg = PDM.getNewDmg(swordLevel, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		displaySwordLevel.text = "Sword Level: " + swordLevel;
 	}
 
-	/*public int SwordLevel(){
+	public int getSwordLevel(){
 		return swordLevel;
-	}*/
+	}
 
 	public int getDamage(){
 		return swordDmg;
 	}
 
-	public void levelUpPotion(int lU){
+	public void levelUp(int lU){
 		swordKills += lU;
 		swordLevel += lU;
-		swordDmg = PDM.getNewDmg(swordKills, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		swordDmg = PDM.getNewDmg(swordLevel, baseDmg, constLvlMod, constTenLvlMod, lvl50Mod, lvl99Mod);
+		displaySwordLevel.text = "Sword Level: " + swordLevel;
 	}
 }
