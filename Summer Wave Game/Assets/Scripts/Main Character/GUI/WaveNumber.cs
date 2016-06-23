@@ -15,9 +15,9 @@ public class WaveNumber : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		valueText.text = "Wave: " + wave.getNumWaves();
+		valueText.text = "Wave: " + wave.getWave();
 
-		if(wave.getNumWaves() > 5){
+		if(wave.getWave() > 5){
 			SceneManager.LoadScene(0);
 		}
 	}
