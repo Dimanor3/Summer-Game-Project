@@ -12,7 +12,7 @@ public class Spawner : MonoBehaviour {
 	// Enemies and how many have been created and how many are to be created
 	public int totalEnemy = 10;
 	private int numEnemy = 0;
-	private int spawnedEnemy = 0;
+	//private int spawnedEnemy = 0;
 
 	// The ID of the spawner
 	private int SpawnID;
@@ -81,10 +81,15 @@ public class Spawner : MonoBehaviour {
 		Enemy.SendMessage("setName", SpawnID);
 		// Increase the total number of enemies spawned and the number of spawned enemies
 		numEnemy++;
-		spawnedEnemy++;
+		//spawnedEnemy++;
 	}
+
+	public void killEnemy(){
+		numEnemy--;
+	}
+
 	// Call this function from the enemy when it "dies" to remove an enemy count
-	public void killEnemy(int sID)
+	/*public void killEnemy(int sID)
 	{
 		// if the enemy's spawnId is equal to this spawnersID then remove an enemy count
 		if (SpawnID == sID)
@@ -107,5 +112,5 @@ public class Spawner : MonoBehaviour {
 		{
 			Spawn = false;
 		}
-	}
+	}*/
 }

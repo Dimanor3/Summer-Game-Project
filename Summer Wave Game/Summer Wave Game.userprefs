@@ -1,60 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\enemyDeath.cs">
-=======
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\enemyDeath.cs">
     <Files>
-      <File FileName="Assets\Scripts\Main Character\GUI\DrawText.cs" Line="6" Column="1" />
-      <File FileName="Assets\Scripts\Universal\GUI Bars\BarScript.cs" Line="12" Column="2" />
-      <File FileName="Assets\Scripts\Main Character\Weapons\Sword\Sword.cs" Line="67" Column="19" />
-      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\MagicUse.cs" Line="112" Column="21" />
-      <File FileName="Assets\Scripts\Enemy\EnemyDamage.cs" Line="34" Column="56" />
-      <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="41" Column="24" />
-      <File FileName="Assets\Scripts\Main Character\Potion\LevelUpPotion.cs" Line="20" Column="89" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Universal\Spawner.cs">
->>>>>>> 3d04d08263b6174cd52382b870cc1d8a4b3653fd
-    <Files>
-      <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="49" Column="3" />
-      <File FileName="Assets\Scripts\Universal\Spawner.cs" Line="77" Column="43" />
-      <File FileName="Assets\Scripts\Enemy\EnemyDamage.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\MagicUse.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\MagicPooling.cs" Line="1" Column="1" />
->>>>>>> 2ba9c85fed57438be2374f6d1390652a847e267d
+      <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="82" Column="3" />
+      <File FileName="Assets\Scripts\Universal\Spawner.cs" Line="84" Column="5" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Summer Wave Game" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Enemy" expanded="True">
-                  <Node name="enemyDeath.cs" selected="True" />
-                </Node>
-                <Node name="Main Character" expanded="True">
-                  <Node name="GUI" expanded="True" />
-                  <Node name="Potion" expanded="True" />
-                  <Node name="Weapons" expanded="True">
-                    <Node name="Magic" expanded="True" />
-                    <Node name="Sword" expanded="True" />
-                  </Node>
-                </Node>
-                <Node name="Universal" expanded="True">
-                  <Node name="GUI Bars" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State name="__root__">
-          <Node name="Summer Wave Game" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

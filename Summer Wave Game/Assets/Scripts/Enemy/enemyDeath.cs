@@ -65,7 +65,6 @@ public class enemyDeath : MonoBehaviour{
 		// Kill enemy if dead
 		if(hp.getHealth() <= 0 || gameObject.transform.position.y <= -10){
 			removeMe ();
-			//objSpawn.GetComponent<Spawner> ().killEnemy (SpawnerID);
 			//transform.position = new Vector3(999f, 999f, 999f);
 		}
 
@@ -80,6 +79,8 @@ public class enemyDeath : MonoBehaviour{
 	{
 		objSpawn.BroadcastMessage("killEnemy", SpawnerID);
 		Destroy(gameObject);
+		objSpawn.GetComponent<Spawner> ().killEnemy ();
+
 	}
 	// this gets called in the beginning when it is created by the spawner script
 	void setName(int sName)
