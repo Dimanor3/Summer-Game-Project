@@ -1,17 +1,40 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" Line="28" Column="102" />
-      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\MagicUse.cs" Line="85" Column="4" />
-=======
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy\enemyDeath.cs">
     <Files>
-      <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="82" Column="3" />
-      <File FileName="Assets\Scripts\Universal\Spawner.cs" Line="84" Column="5" />
->>>>>>> 6a6b67a6ec0acaa5822868479026ee8ded18cae8
+      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\Magic.cs" Line="41" Column="105" />
+      <File FileName="Assets\Scripts\Main Character\Weapons\Magic\MagicUse.cs" Line="74" Column="22" />
+      <File FileName="Assets\Scripts\Enemy\enemyDeath.cs" Line="82" Column="24" />
+      <File FileName="Assets\Scripts\Universal\Spawner.cs" Line="71" Column="3" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Summer Wave Game" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Enemy" expanded="True">
+                  <Node name="enemyDeath.cs" selected="True" />
+                </Node>
+                <Node name="Main Character" expanded="True">
+                  <Node name="Weapons" expanded="True">
+                    <Node name="Magic" expanded="True" />
+                    <Node name="Sword" expanded="True" />
+                    <Node name="Universal" expanded="True" />
+                  </Node>
+                </Node>
+                <Node name="Universal" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="Summer Wave Game" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

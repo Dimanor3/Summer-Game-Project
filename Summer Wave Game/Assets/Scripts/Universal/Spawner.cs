@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour {
 
 	// Enemies and how many have been created and how many are to be created
 	public int totalEnemy = 10;
-	private int numEnemy = 0;
+	[SerializeField] private int numEnemy = 0;
 	//private int spawnedEnemy = 0;
 
 	// The ID of the spawner
