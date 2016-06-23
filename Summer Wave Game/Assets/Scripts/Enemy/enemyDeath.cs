@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Health))]
 public class enemyDeath : MonoBehaviour{
 	public EnemyHealth hp;
 
