@@ -78,7 +78,7 @@ public class Spawner : MonoBehaviour {
 		Vector3 spawnPosition = new Vector3 (spawnPointX, 0.05f, spawnPointZ);
 
 		Instantiate(Enemy, spawnPosition, Quaternion.identity);
-		Enemy.SendMessage("setName", SpawnID);
+		//Enemy.SendMessage("setName", SpawnID);
 		// Increase the total number of enemies spawned and the number of spawned enemies
 		numEnemy++;
 		//spawnedEnemy++;

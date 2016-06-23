@@ -9,13 +9,13 @@ public class EnemyMovement : MonoBehaviour {
 	public float attackDistance;
 	public float enemyMovementSpeed;
 	public float damping;
-	public Transform fpsTarget;
+	[SerializeField] private Transform fpsTarget;
 	Rigidbody theRigidbody;
 
 	// Use this for initialization
 	void Start () {
 		theRigidbody = GetComponent<Rigidbody> ();
-
+		fpsTarget = GameObject.FindWithTag ("Player").GetComponent<Transform>();
 	}
 	
 	// Update is called once per frame
