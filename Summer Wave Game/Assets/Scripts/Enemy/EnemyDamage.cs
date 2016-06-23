@@ -9,9 +9,9 @@ public class EnemyDamage : MonoBehaviour {
 
 	public GameObject magicR;
 
-	private Sword sr;
+	//private Sword sr;
 
-	private MagicUse mr;
+	//private MagicUse mr;
 
 	private int sl;
 

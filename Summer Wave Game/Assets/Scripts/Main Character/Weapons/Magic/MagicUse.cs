@@ -51,7 +51,7 @@ public class MagicUse : MonoBehaviour {
 		baseDmg = 10;
 		magicDmg = baseDmg;
 		magicKills = 0;
-		magicLevel = 0;
+		magicLevel = 1;
 		constLvlMod = 1;
 		constTenLvlMod = 10;
 		lvl50Mod = 30;
