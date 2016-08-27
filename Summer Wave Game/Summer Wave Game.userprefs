@@ -1,5 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,6 +33,12 @@
         </State>
       </Pad>
     </Pads>
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Universal\Spawner.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Universal\Spawner.cs" Line="118" Column="3" />
+    </Files>
+>>>>>>> a0c911f428bf30c9c96a7620c8371ab0a3d307d8
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

@@ -47,10 +47,9 @@ public class EnemyDamage : MonoBehaviour {
 		timer--;
 	}
 
-	void OnTriggerEnter (Collider col){
+	void OnCollisionEnter (Collision col){
 		if(col.gameObject.tag == "Player" && timer <= 0){
 			col.gameObject.GetComponent<PlayerController>().hurt(dmg);
-
 			timer = resetTimer;
 		}
 	}

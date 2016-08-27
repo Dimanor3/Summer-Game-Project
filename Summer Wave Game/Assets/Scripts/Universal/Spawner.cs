@@ -109,6 +109,13 @@ public class Spawner : MonoBehaviour {
 		return numSpawned;
 	}
 
+	public int getNumWaves(){
+		return numWaves;
+	}
+
+	public int getWave (){
+		return numWaves;
+	}
 	// Call this function from the enemy when it "dies" to remove an enemy count
 	/*public void killEnemy(int sID)
 	{
